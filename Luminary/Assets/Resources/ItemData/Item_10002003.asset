@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efff0eee95b8c064db8eb5141fe08d58, type: 3}
   m_Name: Item_10002003
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 21300000, guid: 4f4badc0740d02044a8380c04f8be7aa, type: 3}
   type: 1
   enchantType: 0
   level: 0
