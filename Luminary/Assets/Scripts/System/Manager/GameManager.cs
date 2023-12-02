@@ -263,8 +263,8 @@ public class GameManager : MonoBehaviour
         Item item = itemDataManager.ItemGen(10003001);
         player.GetComponent<Player>().Equip(0, item);
         Resource.Instantiate("Mobs/Slime/Slime", new Vector3(4f, 4f, 0f));
-        Resource.Instantiate("Mobs/Goblin/GoblinWarrior/Goblin_Warrior", new Vector3(4f, 4f, 0f));
-        Resource.Instantiate("Mobs/Goblin/GoblinArchor/Goblin_Archor", new Vector3(4f, 4f, 0f));
+        Resource.Instantiate("Mobs/Goblin/Warrior/Goblin_Warrior", new Vector3(-4f, -4f, 0f));
+        Resource.Instantiate("Mobs/Goblin/Archor/Goblin_Archor", new Vector3(4f, -4f, 0f));
         StageC.rooms.Add(GameObject.Find("LobbyRoom").GetComponent<DunRoom>());
         StageC.currentRoom = 0;
     }
