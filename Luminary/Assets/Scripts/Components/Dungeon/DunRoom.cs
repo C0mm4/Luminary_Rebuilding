@@ -58,12 +58,20 @@ public class DunRoom : MonoBehaviour
     IEnumerator MobSpawn()
     {
         yield return new WaitForSeconds(1);
+        List<GameObject> gos = new List<GameObject>();
         // Spawn Mobs
-
+        foreach (Transform trans in spawnTrans)
+        {
+            GameObject go = GameManager.mobSpawnner.spawnMob(GameManager.Random.getGeneralNext(0, GameManager.mobSpawnner.mobDict.Count), trans);
+            gos.Add(go);
+        }
         //
         yield return new WaitForSeconds(1);
         // Mob Activates
-
+        foreach(GameObject go in gos)
+        {
+            go.GetComponent<Mob>().spawnActive = true;
+        }
         //
         yield return 0;
     }

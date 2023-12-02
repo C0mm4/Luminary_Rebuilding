@@ -1645,6 +1645,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6969091774091618434, guid: 4750728aa6c5b614f8913d569c30a4e8,
+        type: 3}
+      propertyPath: mobLists.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969091774091618434, guid: 4750728aa6c5b614f8913d569c30a4e8,
+        type: 3}
+      propertyPath: mobLists.Array.data[0]
+      value: 
+      objectReference: {fileID: 1828922195368599024, guid: 0b02c0fb5cf06754b9286e8406aa435c,
+        type: 3}
+    - target: {fileID: 6969091774091618434, guid: 4750728aa6c5b614f8913d569c30a4e8,
+        type: 3}
+      propertyPath: mobLists.Array.data[1]
+      value: 
+      objectReference: {fileID: 1828922195368599024, guid: 2b623b87832462348b7e787dd9240c90,
+        type: 3}
+    - target: {fileID: 6969091774091618434, guid: 4750728aa6c5b614f8913d569c30a4e8,
+        type: 3}
+      propertyPath: mobLists.Array.data[2]
+      value: 
+      objectReference: {fileID: 1828922195368599024, guid: 4217e5fd8dcfea34182618fa621f510a,
+        type: 3}
+    - target: {fileID: 6969091774091618434, guid: 4750728aa6c5b614f8913d569c30a4e8,
+        type: 3}
+      propertyPath: mobLists.Array.data[3]
+      value: 
+      objectReference: {fileID: 1828922195368599024, guid: fa9451b241647bd438eb4ee686c4aa9c,
+        type: 3}
     - target: {fileID: 8555632739789745024, guid: 4750728aa6c5b614f8913d569c30a4e8,
         type: 3}
       propertyPath: m_RootOrder

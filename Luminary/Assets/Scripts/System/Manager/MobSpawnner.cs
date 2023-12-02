@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class MobSpawnner : MonoBehaviour
 {
-    public List<MobData> mobLists = new List<MobData>();
+    public List<GameObject> mobLists = new List<GameObject>();
 
-    public Dictionary<int, MobData> mobDict = new Dictionary<int, MobData>();
+    public Dictionary<int, GameObject> mobDict = new Dictionary<int, GameObject>();
 
     // Set Mob Dictionary
     public void init()
     {
-        foreach(MobData mob in mobLists)
+        foreach(GameObject mob in mobLists)
         {
-            mobDict[mob.index] = mob;
+            mobDict[mob.GetComponent<Mob>().data.index] = mob;
         }
     }
 
@@ -21,14 +21,14 @@ public class MobSpawnner : MonoBehaviour
     public GameObject spawnMob(int index, Transform transform, Transform parent = null)
     {
         GameObject go;
-        if(transform == null)
+        if(parent == null)
         {
-            go = GameManager.Resource.Instantiate("Mobs/" + index);
+            go = GameManager.Resource.Instantiate(mobDict[index]);
             go.transform.position = transform.position;
         }
         else
         {
-            go = GameManager.Resource.Instantiate("Mobs/" + index, parent);
+            go = GameManager.Resource.Instantiate(mobDict[index], parent);
             go.transform.position = transform.position;
         }
         if (go != null) 

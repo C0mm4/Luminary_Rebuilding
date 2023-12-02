@@ -22,7 +22,7 @@ MonoBehaviour:
   attackRange:
   - 0
   - 13
-  - 0
+  - 5
   - 0
   castSpeed:
   - 0
@@ -31,7 +31,7 @@ MonoBehaviour:
   - 0.5
   castCool:
   - 0
-  - 0
+  - 20
   - 7
   - 0
   AI: SlimeBoss

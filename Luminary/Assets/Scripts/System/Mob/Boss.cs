@@ -14,6 +14,7 @@ public class Boss : Mob
         isboss = true;
         isSpawnAction = true;
         Debug.Log(sMachine.getStateStr());
+        spawnActive = true;
     }
 
     public void UIGen()

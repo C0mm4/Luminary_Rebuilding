@@ -6,6 +6,7 @@ public abstract class Patturn : MonoBehaviour
 {
     public Mob mob;
     public bool issetData;
+    public bool isActivate;
 
     // Start is called before the first frame update
     void Start()

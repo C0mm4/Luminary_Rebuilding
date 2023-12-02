@@ -22,6 +22,8 @@ public class Mob : Charactor
 
     public bool isCollider;
 
+    public bool spawnActive;
+
     // Start is called before the first frame update
     public override void Awake()
     {
@@ -40,7 +42,7 @@ public class Mob : Charactor
         }
         isCollider = true;
         AIGen();
-        
+        spawnActive = false;
     }
 
     // AI Generate by string name
@@ -68,28 +70,31 @@ public class Mob : Charactor
 
     public override void Update()
     {
-        
-        // if Player didn't find, research player object
-        if(player == null)
+        if (spawnActive)
         {
-            try
+
+            // if Player didn't find, research player object
+            if (player == null)
             {
-                player = GameObject.Find("PlayerbleChara").GetComponent<Charactor>();
-            }
-            catch
-            {
-                if(getState().GetType().Name != "MobStunState")
+                try
                 {
-                    sMachine.changeState(new MobIdleState());
+                    player = GameObject.Find("PlayerbleChara").GetComponent<Charactor>();
+                }
+                catch
+                {
+                    if (getState().GetType().Name != "MobStunState")
+                    {
+                        sMachine.changeState(new MobIdleState());
+                    }
                 }
             }
+
+            // AI model update
+            model.Update();
+
+
+            base.Update();
         }
-
-        // AI model update
-        model.Update();
-
-
-        base.Update();
     }
 
     public override void DieObject()

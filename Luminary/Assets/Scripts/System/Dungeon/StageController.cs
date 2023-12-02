@@ -106,12 +106,14 @@ public class StageController
         {
             foreach (DunRoom go in rooms)
             {
-                GameManager.Resource.Destroy(go.gameObject);
+                if(go != null)
+                    GameManager.Resource.Destroy(go.gameObject);
             }
             rooms.Clear();
             foreach (GameObject go in gates)
             {
-                GameManager.Resource.Destroy(go);
+                if(go != null)
+                    GameManager.Resource.Destroy(go);
             }
             gates.Clear();
             isClear = new bool[0];
