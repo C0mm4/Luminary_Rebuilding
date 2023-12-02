@@ -74,4 +74,12 @@ public class MobProjectile : MobAttack
 
         }
     }
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Wall")
+        {
+            GameManager.Resource.Destroy(gameObject);
+        }
+        base.OnTriggerEnter2D(other);
+    }
 }

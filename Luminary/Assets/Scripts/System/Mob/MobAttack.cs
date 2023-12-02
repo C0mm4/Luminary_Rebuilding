@@ -21,7 +21,7 @@ public class MobAttack : MonoBehaviorObj
         GameManager.Resource.Destroy(gameObject);
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {

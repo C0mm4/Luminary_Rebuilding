@@ -189,7 +189,8 @@ public class MapGen
 
         }
         // Generate Room Prefab
-        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room"+ size.ToString() + " " + type.ToString(), roomObj.transform).GetComponent<DunRoom>();
+//        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room"+ size.ToString() + " " + type.ToString(), roomObj.transform).GetComponent<DunRoom>();
+        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room1 0", roomObj.transform).GetComponent<DunRoom>();
         room.gameObject.transform.SetParent(room.transform);
         Vector2 pos = new Vector2();
 
