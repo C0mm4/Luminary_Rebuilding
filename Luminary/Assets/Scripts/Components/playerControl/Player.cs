@@ -157,6 +157,8 @@ public class Player : Charactor
                 if (currentSpell.isSet())
                 {
                     currentSpell.useSkill();
+                    Debug.Log("attackSound.Play");
+                    GameManager.soundManager.playAttackSound();
                 }
             }
             // Q button is Weapon Slot Change

@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public static PlayerDataManager playerDataManager;
     public static GameObject player;
     public static InputManager inputManager;
+    public static SoundManager soundManager;
 
     public static GameState gameState;
     [SerializeField]
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
         cameraManager = GameObject.Find("GameManager").GetComponent<CameraManager>();
         playerDataManager = GameObject.Find("GameManager").GetComponent<PlayerDataManager>();
         inputManager = GameObject.Find("GameManager").GetComponent<InputManager>();
+        soundManager = GameObject.Find("GameManager").GetComponent<SoundManager>();
         bool isFirstRun = PlayerPrefs.GetInt("isFirstRun", 1) == 1;
         if (isFirstRun)
         {
@@ -188,6 +190,7 @@ public class GameManager : MonoBehaviour
         StageC.init();
         Script.init();
         playerDataManager.playerDataInit();
+        soundManager.loadSkillSound("test");
     }
 
     // Loading Setting datas

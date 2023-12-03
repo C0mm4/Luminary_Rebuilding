@@ -26,38 +26,19 @@ public class SoundManager : MonoBehaviour
 
     public static AudioSource inPlayBGM;
     public AudioSource attackSound;
-    public AudioSource fireSkillSoundEffect;
-    public AudioSource iceSkillSoundEffect;
-    public AudioSource windSkillSoundEffect;
-    public AudioSource earthSkillSoundEffect;
+    public AudioSource nomalSkillSoundEffect;
     public AudioSource playerHitSound;
     public AudioSource[] mobHitSound;
 
 
 
-    // Audio load
-    public bool setInPlayBGM(string soundName)
-    {
-        try
-        {
-            inPlayBGM.clip = Resources.Load<AudioClip>("Audio/BGM/" + soundName);
-        }
-        catch(UnityException e)
-        {
-            Debug.LogError("Failed to load inPlayBGM: " + "Audio/BGM/" + soundName);
-            return false;
-        }
-        return true;
-    }
 
-    public bool loadSkillSound(int[] skillClass)
+    public bool loadSkillSound(string skillClass)
     {
         try
         {
-            fireSkillSoundEffect.clip = Resources.Load<AudioClip>("Audio/Skill/" + skillClass[0]);
-            iceSkillSoundEffect.clip = Resources.Load<AudioClip>("Audio/Skill/" + skillClass[1]);
-            windSkillSoundEffect.clip = Resources.Load<AudioClip>("Audio/Skill/" + skillClass[2]);
-            earthSkillSoundEffect.clip = Resources.Load<AudioClip>("Audio/Skill/" + skillClass[3]);
+            attackSound = gameObject.AddComponent<AudioSource>();
+            attackSound.clip = Resources.Load<AudioClip>("Audio/Skill/Flame");
         }
         catch (UnityException e)
         {
@@ -78,24 +59,13 @@ public class SoundManager : MonoBehaviour
     //Audio play_Skill
     public void playSkillSound(int skillNum)
     {
-        switch (skillNum)
-        {
-            case 0:
-                fireSkillSoundEffect.Play();
-                break;
-            case 1:
-                iceSkillSoundEffect.Play();
-                break;
-            case 2:
-                windSkillSoundEffect.Play();
-                break;
-            case 3:
-                earthSkillSoundEffect.Play();
-                break;
-            default:
-                Debug.Log("An unexpected skill value was entered.");
-                break;
-        }
+        nomalSkillSoundEffect.Play();
+    }
+
+    public void playAttackSound()
+    {
+        Debug.Log("attackSound.Play");
+        attackSound.Play();
     }
 
 }
