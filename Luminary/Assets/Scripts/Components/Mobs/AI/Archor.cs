@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Archor : AIModel
 {
+
     public override void Update()
     {
         // player exists

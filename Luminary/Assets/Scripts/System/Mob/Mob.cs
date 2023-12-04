@@ -117,11 +117,11 @@ public class Mob : Charactor
         atks.Clear();
         AtkObj.Clear();
         GameManager.player.GetComponent<Player>().status.gold += data.dropGold;
+        model.DestroyHandler();
         base.DieObject();
     }
 
-
-    public void OnCollisionEnter2D(Collision2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (isCollider)
         {

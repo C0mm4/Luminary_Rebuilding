@@ -8,7 +8,6 @@ public class DieState : State
     {
         charactor = chr;
         chr.AnimationPlay("DeadAnimation");
-        Debug.Log("DieState");
         chr.GetComponent<Rigidbody2D>().simulated = false;
     }
 

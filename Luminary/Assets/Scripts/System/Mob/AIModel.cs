@@ -9,5 +9,8 @@ public abstract class AIModel
 
     
     public abstract void Update();
+    public virtual void DestroyHandler()
+    {
 
+    }
 }

@@ -10,6 +10,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class MapGen
@@ -99,7 +100,9 @@ public class MapGen
 
         // Boss Room Generate
         // Blank
-        // BossRoomGen();
+        room = BossRoomGen();
+        room.roomID = roomN;
+        Rooms.Add(room);
         //
 
         // Dungeon BackGround sprite Object Create
@@ -155,13 +158,69 @@ public class MapGen
         SetPosData(room);
         return room;
     }
-    /*
+    
 
     public DunRoom BossRoomGen()
     {
+        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/BossRoom", roomObj.transform).GetComponent<DunRoom>();
 
+        room.gameObject.transform.SetParent(room.transform);
+        Vector2 pos;
+        // able position get list
+        List<Vector2> keys = ablepos.Keys.ToList();
+        PointPosition po;
+        KeyValuePair<DunRoom, PointPosition> targetRoom;
+        // Find Able create room position
+        do
+        {
+            int randIndex = GameManager.Random.getMapNext(0, keys.Count);
+            pos = keys[randIndex];
+            targetRoom = ablepos[pos];
+            Vector2 targetPos = new Vector2(targetRoom.Key.x, targetRoom.Key.y);
+            po = Func.GetPointPosition(targetPos, pos);
+            switch (po)
+            {
+                case PointPosition.Up:
+                    room.y = (int)pos.y + room.centerY;
+                    room.x = (int)pos.x;
+                    break;
+                case PointPosition.Down:
+                    room.y = (int)pos.y - (room.sizeY - room.centerY - 1);
+                    room.x = (int)pos.x;
+                    break;
+                case PointPosition.Left:
+                    room.x = (int)pos.x - (room.sizeX - room.centerX - 1);
+                    room.y = (int)pos.y;
+                    break;
+                case PointPosition.Right:
+                    room.x = (int)pos.x + room.centerX;
+                    room.y = (int)pos.y;
+                    break;
+            }
+
+        }
+        while (CheckAblePos(room));
+
+        // Delete Create Position Data in Able pos same data
+        var deltarget = ablepos.Where(pair => pair.Value.Key == targetRoom.Key && pair.Value.Value == po);
+
+        foreach (var pair in deltarget.ToList())
+        {
+            ablepos.Remove(pair.Key);
+        }
+        // set room transform, and data
+        // change connnect corridor tiles door tiles
+        room.transform.position = new Vector3(room.x * 2.56f, room.y * 2.56f, 0);
+        SetTilePos(room);
+        SetDoorTile(targetRoom.Key, room, pos, po);
+        SetPosData(room, po);
+
+        targetRoom.Key.ConnectRoom.Add(room);
+        room.ConnectRoom.Add(targetRoom.Key);
+
+        return room;
     }
-
+    /*
     public DunRoom ShopRoomGen()
     {
 
@@ -190,7 +249,7 @@ public class MapGen
         }
         // Generate Room Prefab
 //        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room"+ size.ToString() + " " + type.ToString(), roomObj.transform).GetComponent<DunRoom>();
-        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room1 0", roomObj.transform).GetComponent<DunRoom>();
+        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room1", roomObj.transform).GetComponent<DunRoom>();
         room.gameObject.transform.SetParent(room.transform);
         Vector2 pos = new Vector2();
 

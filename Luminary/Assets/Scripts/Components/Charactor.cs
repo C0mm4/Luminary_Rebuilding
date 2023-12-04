@@ -250,6 +250,7 @@ public class Charactor : MonoBehaviorObj
                     status.currentHP -= pts;
 
                     Invoke("reclusiveHitbox", 1f);
+                    
                 }
             }
             else
@@ -294,7 +295,6 @@ public class Charactor : MonoBehaviorObj
     // When object die function
     public virtual void DieObject()
     {
-        Debug.Log("Charactor DieObj");
         changeState(new DieState());
     }
     // Item Add in Inventory[index]

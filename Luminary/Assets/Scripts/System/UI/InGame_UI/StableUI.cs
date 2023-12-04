@@ -55,9 +55,11 @@ public class StableUI : MonoBehaviorObj
     public float castT;
     public float castStartT;
 
+    [SerializeField]
     int maxHP, maxMana;
+    [SerializeField]
     int currentHP, currentMana;
-
+    [SerializeField]
     Player player;
 
     RectTransform rt;
@@ -124,12 +126,12 @@ public class StableUI : MonoBehaviorObj
         if(maxHP != GameManager.player.GetComponent<Player>().status.maxHP)
         {
             maxHP = GameManager.player.GetComponent<Player>().status.maxHP;
-            foreach (GameObject hp in currentHPBar)
+            foreach (GameObject hp in HPBar)
             {
                 GameManager.Resource.Destroy(hp);
 
             }
-            currentHPBar.Clear();
+            HPBar.Clear();
             for(int i = 0; i < currentHP; i++)
             {
                 GameObject go = new GameObject();
@@ -192,13 +194,13 @@ public class StableUI : MonoBehaviorObj
         if (currentHP != GameManager.player.GetComponent<Player>().status.currentHP)
         {
             currentHP = GameManager.player.GetComponent<Player>().status.currentHP;
-            foreach (GameObject hp in HPBar)
+            foreach (GameObject hp in currentHPBar)
             {
                 GameManager.Resource.Destroy(hp);
 
             }
-            HPBar.Clear();
-            for (int i = 0; i < maxHP; i++)
+            currentHPBar.Clear();
+            for (int i = 0; i < currentHP; i++)
             {
                 GameObject go = new GameObject();
                 go.AddComponent<RectTransform>();

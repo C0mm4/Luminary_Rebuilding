@@ -48,7 +48,7 @@ public class Boss : Mob
     public void SpawnSceneStart()
     {
         GameManager.cameraManager.player = transform;
-        AnimationPlay("SpawnAnimation");
+        AnimationPlay("SpawnCutScene");
         GameManager.Instance.uiManager.ChangeState(UIState.CutScene);
     }
 

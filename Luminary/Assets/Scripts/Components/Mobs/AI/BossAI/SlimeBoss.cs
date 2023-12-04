@@ -8,6 +8,7 @@ public class SlimeBoss : AIModel
     private bool isMove = false;
     private float moveTime;
 
+
     public override void Update()
     {
         if(GameManager.player != null)
@@ -32,10 +33,10 @@ public class SlimeBoss : AIModel
                     {
 
                         // 체력 일정 수치 이하면 기믹패턴 발현
-                        if (target.HPPercent() <= 0.25f && !patturns[0])
+                        if (target.HPPercent() <= 1f && !patturns[0])
                         {
                             patturns[0] = true;
-                            target.changeState(new MobCastState(2f, 3));
+                            target.changeState(new MobCastState(target.data.castSpeed[3], 3));
                         }
                         else if (target.playerDistance().magnitude <= target.data.attackRange[2])
                         {

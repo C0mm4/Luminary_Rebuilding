@@ -17,7 +17,7 @@ public class FSMManager
             "PlayerMoveState",
             "PlayerTeleportState",
             "PlayerCastingState",
-            "PlayerDieState",
+            "DieState",
             "PlayerHitState",
             "PlayerMoveAbsolState",
             "PlayerStunState",

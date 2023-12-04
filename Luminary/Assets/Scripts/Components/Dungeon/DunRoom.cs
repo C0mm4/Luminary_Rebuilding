@@ -63,6 +63,7 @@ public class DunRoom : MonoBehaviour
         foreach (Transform trans in spawnTrans)
         {
             GameObject go = GameManager.mobSpawnner.spawnMob(GameManager.Random.getGeneralNext(0, GameManager.mobSpawnner.mobDict.Count), trans);
+            mobCount++;
             gos.Add(go);
         }
         //

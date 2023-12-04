@@ -55,4 +55,10 @@ public class Func
         status.speed = (int)Math.Round((status.basespeed + status.increaseSpeed) * ((status.dexterity * 0.05) + 0.95) * (status.pIncreaseSpeed + 1));
         return status;
     }
+
+    public static int[] xpos = new int[4] { 0, 0, 1, -1 };
+    public static int[] ypos = new int[4] { 1, -1, 0, 0 };
+
+    public static int[] xXpos = new int[4] { -1, -1, 1, 1 };
+    public static int[] yXpos = new int[4] { -1, 1, 1, -1 };
 }
