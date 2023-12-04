@@ -183,10 +183,10 @@ MonoBehaviour:
   - {fileID: 8638928484661445034}
   - {fileID: 8484886159628152529}
   doorTiles:
-  - {fileID: 308878930973576687, guid: ee51b525e5a02fb4faf2e8794744b591, type: 3}
-  - {fileID: 308878930973576687, guid: 92ec073ac4a773b46ab212e8ae5fe120, type: 3}
-  - {fileID: 308878930973576687, guid: e54de78f0a87c3647a15bc069573ec8c, type: 3}
-  - {fileID: 308878930973576687, guid: f014279ffb2b7104783cef72efeb662f, type: 3}
+  - {fileID: 6847837761051257368, guid: ee51b525e5a02fb4faf2e8794744b591, type: 3}
+  - {fileID: 7722450345821684344, guid: 92ec073ac4a773b46ab212e8ae5fe120, type: 3}
+  - {fileID: 7436805047304905786, guid: e54de78f0a87c3647a15bc069573ec8c, type: 3}
+  - {fileID: 1678252933651744190, guid: f014279ffb2b7104783cef72efeb662f, type: 3}
   Doors: []
   DoorObjs: []
   ConnectRoom: []
