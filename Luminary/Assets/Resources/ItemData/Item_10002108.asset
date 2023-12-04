@@ -22,7 +22,7 @@ MonoBehaviour:
   funcName: StatusEquip
   baseDex: 0
   baseInt: 2
-  baseStr: 0
+  baseStr: 1
   baseIncDMG: 0
   basepIncDMG: 0
   baseIncHP: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
   shockDMG: 0
   electDMG: 0
   seedDMG: 0
-  meltingDMG: 30
+  meltingDMG: 0
   extinguishDMG: 0
   fireDMG: 0
   electFireDMG: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   overloadDMG: 0
   executionDMG: 0
   basepGetDMG: 0
-  effectText: Melting Damage + 30%
+  effectText: Int + 2 Str + 1
   flavorText: 
   purchaseGold: 1800
   sellGold: 900

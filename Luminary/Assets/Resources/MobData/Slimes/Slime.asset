@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   index: 0
-  baseHP: 10
+  baseHP: 100
   baseDMG: 2
   basespeed: 2
   runRange: 0
@@ -26,4 +26,4 @@ MonoBehaviour:
   castCool:
   - 0
   AI: Slime
-  dropGold: 100
+  dropGold: 1000

@@ -20,9 +20,9 @@ MonoBehaviour:
   itemIndex: 10002116
   spellnum: 0
   funcName: StatusEquip
-  baseDex: 0
-  baseInt: 2
-  baseStr: 0
+  baseDex: 1
+  baseInt: 1
+  baseStr: 1
   baseIncDMG: 0
   basepIncDMG: 0
   baseIncHP: 0
@@ -51,10 +51,10 @@ MonoBehaviour:
   weatheringDMG: 0
   boostDMG: 0
   diffusionDMG: 0
-  overloadDMG: 30
+  overloadDMG: 0
   executionDMG: 0
   basepGetDMG: 0
-  effectText: Overload Damage + 30%
+  effectText: All + 1
   flavorText: 
   purchaseGold: 1800
   sellGold: 900

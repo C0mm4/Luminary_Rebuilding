@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Goblin_Warrior
   m_EditorClassIdentifier: 
   index: 0
-  baseHP: 10
+  baseHP: 150
   baseDMG: 1
   basespeed: 4
   runRange: 0
@@ -26,4 +26,4 @@ MonoBehaviour:
   castCool:
   - 0
   AI: Warrior
-  dropGold: 200
+  dropGold: 2000

@@ -20,9 +20,9 @@ MonoBehaviour:
   itemIndex: 10002111
   spellnum: 0
   funcName: StatusEquip
-  baseDex: 0
-  baseInt: 2
-  baseStr: 0
+  baseDex: 2
+  baseInt: 0
+  baseStr: 1
   baseIncDMG: 0
   basepIncDMG: 0
   baseIncHP: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
   electDMG: 0
   seedDMG: 0
   meltingDMG: 0
-  extinguishDMG: 30
+  extinguishDMG: 0
   fireDMG: 0
   electFireDMG: 0
   burnningDMG: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   overloadDMG: 0
   executionDMG: 0
   basepGetDMG: 0
-  effectText: Extinguish Damage + 30%
+  effectText: Dex + 1 Str + 1
   flavorText: 
   purchaseGold: 1800
   sellGold: 900

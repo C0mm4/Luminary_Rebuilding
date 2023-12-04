@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Goblin_Magition
   m_EditorClassIdentifier: 
   index: 0
-  baseHP: 10
+  baseHP: 120
   baseDMG: 1
   basespeed: 6
   runRange: 4
@@ -26,4 +26,4 @@ MonoBehaviour:
   castCool:
   - 0.3
   AI: Archor
-  dropGold: 200
+  dropGold: 1500

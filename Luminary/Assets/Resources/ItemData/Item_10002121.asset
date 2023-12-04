@@ -20,18 +20,18 @@ MonoBehaviour:
   itemIndex: 10002121
   spellnum: 0
   funcName: StatusEquip
-  baseDex: 0
-  baseInt: 2
-  baseStr: 0
+  baseDex: 1
+  baseInt: 1
+  baseStr: 1
   baseIncDMG: 0
-  basepIncDMG: 0
+  basepIncDMG: 10
   baseIncHP: 0
   basepIncHP: 0
   baseIncMP: 0
   basepIncMP: 0
   baseIncSpd: 0
   basepIncSpd: 0
-  igniteDMG: 10
+  igniteDMG: 0
   freezeDMG: 0
   flowDMG: 0
   shockDMG: 0
@@ -48,13 +48,13 @@ MonoBehaviour:
   expandDMG: 0
   sproutDMG: 0
   dischargeDMG: 0
-  weatheringDMG: 30
+  weatheringDMG: 0
   boostDMG: 0
   diffusionDMG: 0
   overloadDMG: 0
   executionDMG: 0
   basepGetDMG: 0
-  effectText: Weathering Damage + 30%
+  effectText: MDMG + 10 All + 1
   flavorText: 
   purchaseGold: 1800
   sellGold: 900

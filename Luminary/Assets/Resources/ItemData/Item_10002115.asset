@@ -21,8 +21,8 @@ MonoBehaviour:
   spellnum: 0
   funcName: StatusEquip
   baseDex: 0
-  baseInt: 2
-  baseStr: 0
+  baseInt: 0
+  baseStr: 3
   baseIncDMG: 0
   basepIncDMG: 0
   baseIncHP: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   overloadDMG: 0
   executionDMG: 0
   basepGetDMG: 0
-  effectText: Cracked Damage + 30%
+  effectText: Str + 3
   flavorText: 
   purchaseGold: 1800
   sellGold: 900

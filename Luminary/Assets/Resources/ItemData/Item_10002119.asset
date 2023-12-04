@@ -20,11 +20,11 @@ MonoBehaviour:
   itemIndex: 10002119
   spellnum: 0
   funcName: StatusEquip
-  baseDex: 0
-  baseInt: 2
+  baseDex: 1
+  baseInt: 0
   baseStr: 0
   baseIncDMG: 0
-  basepIncDMG: 0
+  basepIncDMG: 15
   baseIncHP: 0
   basepIncHP: 0
   baseIncMP: 0
@@ -50,11 +50,11 @@ MonoBehaviour:
   dischargeDMG: 0
   weatheringDMG: 0
   boostDMG: 0
-  diffusionDMG: 30
+  diffusionDMG: 0
   overloadDMG: 0
   executionDMG: 0
   basepGetDMG: 0
-  effectText: Diffuse Damage + 30%
+  effectText: MDMG + 15 Dex + 1
   flavorText: 
   purchaseGold: 1800
   sellGold: 900
