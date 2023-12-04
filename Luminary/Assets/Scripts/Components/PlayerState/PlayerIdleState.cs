@@ -8,7 +8,7 @@ public class PlayerIdleState : State
     {
         charactor = chr;
         charactor.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-        Debug.Log("Idle");
+
     }
 
     public override void UpdateState()

@@ -3,6 +3,7 @@ using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -293,6 +294,7 @@ public class Charactor : MonoBehaviorObj
     // When object die function
     public virtual void DieObject()
     {
+        Debug.Log("Charactor DieObj");
         changeState(new DieState());
     }
     // Item Add in Inventory[index]
@@ -545,10 +547,19 @@ public class Charactor : MonoBehaviorObj
     {
         if(clip != currentAnimation)
         {
-            currentAnimation = clip;
-            animator.speed = spd;
-            animator.Play(clip);
+            if (System.Array.Exists(animator.runtimeAnimatorController.animationClips.ToArray(), findclip => findclip.name == clip))
+            {
+                currentAnimation = clip;
+                animator.speed = spd;
+                animator.Play(clip);
+
+            }
+            else
+            {
+                Debug.Log($"Can't Find Clip : {clip}");
+            }
         }
+
     }
 
     public void EffectGen(string effectPath)

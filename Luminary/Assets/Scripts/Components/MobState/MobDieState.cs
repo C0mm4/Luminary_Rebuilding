@@ -6,7 +6,10 @@ public class DieState : State
 {
     public override void EnterState(Charactor chr)
     {
+        charactor = chr;
         chr.AnimationPlay("DeadAnimation");
+        Debug.Log("DieState");
+        chr.GetComponent<Rigidbody2D>().simulated = false;
     }
 
     public override void ExitState()

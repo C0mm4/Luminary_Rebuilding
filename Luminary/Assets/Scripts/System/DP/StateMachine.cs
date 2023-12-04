@@ -12,7 +12,6 @@ public class StateMachine
     public StateMachine(Charactor chr)
     {
         target = chr;
-        Debug.Log(target);
     }
 
     // change charator state

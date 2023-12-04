@@ -33,7 +33,6 @@ public class ResourceManager
         }
         else
         {
-            prefab.transform.position = pos;
             try
             {
                 if(prefab.GetComponent<MonoBehaviorObj>().type == MonoBehaviorObj.types.Object)
@@ -41,6 +40,7 @@ public class ResourceManager
                     GameObject obj = Object.Instantiate(prefab, parent);
                     Vector3 scale = prefab.transform.localScale;
                     obj.transform.localScale = new Vector3(1 * scale.x, 2 * scale.y, 1 * scale.z);
+                    obj.transform.position = pos;
                     obj.transform.localEulerAngles = new Vector3(-60, 0, 0);
                     return obj;
                 }
@@ -137,12 +137,12 @@ public class ResourceManager
         }
         else
         {
-            prefab.transform.position = pos;
             try
             {
                 if (prefab.GetComponent<MonoBehaviorObj>().type == MonoBehaviorObj.types.Object)
                 {
                     Vector3 scale = prefab.transform.localScale;
+                    prefab.transform.position = pos;
                     prefab.transform.localScale = new Vector3(1 * scale.x, 2 * scale.y, 1 * scale.z);
                     prefab.transform.localEulerAngles = new Vector3(-60, 0, 0);
                 }

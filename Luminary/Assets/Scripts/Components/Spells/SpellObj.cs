@@ -23,7 +23,6 @@ public class SpellObj : MonoBehaviorObj
     public virtual void Start()
     {
         player = GameManager.player;
-        Debug.Log("Gen");
         isGen = true;
     }
     // Set spell objects datas
@@ -81,7 +80,7 @@ public class SpellObj : MonoBehaviorObj
 
     public virtual void OnDestroy()
     {
-        Debug.Log("Destory");
+
     }
 
     public Vector3 GetEllipseIntersectionPoint(Vector3 point)

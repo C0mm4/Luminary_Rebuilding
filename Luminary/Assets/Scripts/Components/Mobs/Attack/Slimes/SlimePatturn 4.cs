@@ -5,6 +5,7 @@ using UnityEngine;
 public class SlimePatturn4 : Patturn
 {
     bool isRoomDataSet;
+    List<GameObject> pillars;
     public override void Update()
     {
         if (issetData)
@@ -26,8 +27,16 @@ public class SlimePatturn4 : Patturn
 
     public IEnumerator Action()
     {
-        yield return 0;
+        yield return new WaitForSeconds(1f);
+        pillars = new List<GameObject>();
+        for(int i = 0; i < 4; i++)
+        {
+            GameObject go = GameManager.Resource.Instantiate("", transform);
+            go.transform.position = Vector3.zero;
+            pillars.Add(go);
+        }
 
+        
     }
 
 }

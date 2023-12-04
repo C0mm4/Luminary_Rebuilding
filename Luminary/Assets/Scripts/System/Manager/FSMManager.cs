@@ -59,7 +59,7 @@ public class FSMManager
             "MobCastState",
             "MobATKState",
             "MobHitState",
-            "MobDieState",
+            "DieState",
             "MobMoveState",
             "MobStunState",
         };
