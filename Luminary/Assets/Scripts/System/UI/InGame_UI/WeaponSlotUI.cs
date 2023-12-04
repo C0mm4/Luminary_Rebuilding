@@ -13,6 +13,7 @@ public class WeaponSlotUI : MonoBehaviorObj
     public void enable()
     {
         gameObject.SetActive(true);
+        
     }
 
     public void disable()

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5954463558276820840}
   m_Layer: 0
   m_Name: Pillar
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,8 @@ MonoBehaviour:
   animator: {fileID: 5954463558276820840}
   currentAnimation: 
   sawDir: {x: 0, y: 0}
-  attackPrefab: []
+  attackPrefab:
+  - {fileID: 4901298086026569146, guid: 0cc145d3af7fed1448770d8f42074eb1, type: 3}
   isHitbox: 
   data: {fileID: 11400000, guid: ba7f9733971bde140afb35c70d20fe44, type: 2}
   lastAttackT: []

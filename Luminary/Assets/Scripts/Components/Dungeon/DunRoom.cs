@@ -62,7 +62,7 @@ public class DunRoom : MonoBehaviour
         // Spawn Mobs
         foreach (Transform trans in spawnTrans)
         {
-            GameObject go = GameManager.mobSpawnner.spawnMob(GameManager.Random.getGeneralNext(0, GameManager.mobSpawnner.mobDict.Count), trans);
+            GameObject go = GameManager.mobSpawnner.spawnMob(GameManager.Random.getGeneralNext(0, GameManager.mobSpawnner.mobLists.Count), trans);
             mobCount++;
             gos.Add(go);
         }

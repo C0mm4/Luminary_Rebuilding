@@ -243,6 +243,10 @@ public class EnchantInven : BarInven
                 GameObject go = GameManager.Resource.Instantiate("UI/NPCUI/WeaponEnchant");
                 go.GetComponent<EnchantTable>().targetItem = slots[selectIndex].GetComponent<ItemSlotBar>().Item;
                 go.GetComponent<EnchantTable>().originSlotindex = slots[selectIndex].GetComponent<ItemSlotBar>().originSlot;
+                if(slots[selectIndex].GetComponent<ItemSlotBar>().originSlot < 6)
+                {
+                    go.GetComponent<EnchantTable>().isEquip = true;
+                }
                 go.GetComponent<EnchantTable>().setData();
             }
             // if Item is not Weapon >> Item Enchant Table
@@ -251,6 +255,11 @@ public class EnchantInven : BarInven
                 GameObject go = GameManager.Resource.Instantiate("UI/NPCUI/WeaponEnchant");
                 go.GetComponent<EnchantTable>().targetItem = slots[selectIndex].GetComponent<ItemSlotBar>().Item;
                 go.GetComponent<EnchantTable>().originSlotindex = slots[selectIndex].GetComponent<ItemSlotBar>().originSlot;
+                if (slots[selectIndex].GetComponent<ItemSlotBar>().originSlot < 6)
+                {
+                    go.GetComponent<EnchantTable>().isEquip = true;
+                    go.GetComponent<EnchantTable>().originSlotindex -= 2;
+                }
                 go.GetComponent<EnchantTable>().setData();
             }
         }

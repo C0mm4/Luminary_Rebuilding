@@ -142,7 +142,11 @@ public class LevelUp : Menu
         dexSelect = 0;
         intSelect = 0;
         GameManager.player.GetComponent<Player>().status = playerStatus;
+        int hp = playerStatus.maxHP;
         GameManager.player.GetComponent<Player>().calcStatus();
+        Debug.Log(GameManager.player.GetComponent<Player>().status.maxHP - hp);
+        GameManager.player.GetComponent<Player>().status.currentHP += GameManager.player.GetComponent<Player>().status.maxHP - hp;
+        playerStatus.currentHP += GameManager.player.GetComponent<Player>().status.maxHP - hp;
         DataSet();
     }
 

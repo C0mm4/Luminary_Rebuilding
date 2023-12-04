@@ -9,7 +9,7 @@ public class StatusEquip : ItemFunc
     {
         Debug.Log("TEST");
         GameManager.player.GetComponent<Player>().ItemStatusSum(data.status);
-        Debug.Log(data.status.intellect);
+        Debug.Log(data.status.strength);
     }
 
     public override void OnDamagedEffect()
@@ -26,7 +26,6 @@ public class StatusEquip : ItemFunc
 
     public override void UnEquipEffect()
     {
-        Debug.Log("TestItem1 UnEquip");
         GameManager.player.GetComponent<Player>().ItemStatusminus(data.status);
     }
 }

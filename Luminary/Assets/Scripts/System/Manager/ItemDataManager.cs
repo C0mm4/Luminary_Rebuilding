@@ -112,14 +112,15 @@ public class ItemDataManager : MonoBehaviour
         else
         {
 
-            if (rnd < 40)
+            if (rnd < 70)   // 40
             {
                 rarity = 0;
             }
-            else if (rnd < 70)
+            else if (rnd < 100) // 70
             {
                 rarity = 1;
             }
+/*
             else if (rnd < 90)
             {
                 rarity = 2;
@@ -127,7 +128,7 @@ public class ItemDataManager : MonoBehaviour
             else
             {
                 rarity = 3;
-            }
+            }*/
         }
         
         index += rarity;

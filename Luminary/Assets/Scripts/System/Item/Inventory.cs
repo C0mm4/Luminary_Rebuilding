@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Playables;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class Inventory : Menu
 {
@@ -36,6 +38,9 @@ public class Inventory : Menu
     public TMP_Text str;
     public TMP_Text dex;
     public TMP_Text intellect;
+
+    public Image spellSlot1;
+    public Image spellSlot2;
 
     public int clickIndex = -1;
 
@@ -111,6 +116,22 @@ public class Inventory : Menu
             str.text = target.GetComponent<Player>().status.strength.ToString();
             dex.text = target.GetComponent<Player>().status.dexterity.ToString();
             intellect.text = target.GetComponent<Player>().status.Intellect.ToString();
+            if (equipWeapons[0].item != null)
+            {
+                spellSlot1.sprite = GameManager.Spells.getSpellData(equipWeapons[0].item.data.spellnum).spr;
+            }
+            else
+            {
+                spellSlot1.sprite = null;
+            }
+            if (equipWeapons[1].item != null)
+            {
+                spellSlot2.sprite = GameManager.Spells.getSpellData(equipWeapons[1].item.data.spellnum).spr;
+            }
+            else
+            {
+                spellSlot2.sprite = null;
+            }
         }
     }
 

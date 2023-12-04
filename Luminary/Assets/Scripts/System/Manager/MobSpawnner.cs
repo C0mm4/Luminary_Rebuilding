@@ -23,12 +23,12 @@ public class MobSpawnner : MonoBehaviour
         GameObject go;
         if(parent == null)
         {
-            go = GameManager.Resource.Instantiate(mobDict[index]);
+            go = GameManager.Resource.Instantiate(mobLists[index]);
             go.transform.position = transform.position;
         }
         else
         {
-            go = GameManager.Resource.Instantiate(mobDict[index], parent);
+            go = GameManager.Resource.Instantiate(mobLists[index], parent);
             go.transform.position = transform.position;
         }
         if (go != null) 

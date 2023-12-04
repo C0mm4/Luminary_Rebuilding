@@ -58,11 +58,21 @@ public class SlimePatturn4 : Patturn
     public IEnumerator Action()
     {
         yield return new WaitForSeconds(1f);
+
+        GameObject go = GameManager.Resource.Instantiate("Mobs/Shadows", mob.transform.position);
+        go.transform.localScale = new Vector3(5, 5, 1);
+
+        yield return new WaitForSeconds(1f);
+        mob.AnimationPlay("AttackAnimation 3", 0.7f);
+
+        yield return new WaitForSeconds(1f);
+        GameManager.Resource.Destroy(go);
+
         pillars = new List<GameObject>();
         transform.position = mob.transform.position;
         for(int i = 0; i < 4; i++)
         {
-            GameObject go = GameManager.Resource.Instantiate("Mobs/Slime/AttackPrefabs/Pillar", transform);
+            go = GameManager.Resource.Instantiate("Mobs/Slime/AttackPrefabs/Pillar", transform);
             go.transform.position = GameManager.StageC.rooms[GameManager.StageC.currentRoom].transform.position + new Vector3(Func.xXpos[i] * 5.25f, Func.yXpos[i] * 4f + -2);
             pillars.Add(go);
             go.GetComponent<Mob>().spawnActive = true;

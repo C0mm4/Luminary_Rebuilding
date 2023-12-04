@@ -234,7 +234,7 @@ public class MapGen
         switch (size)
         {
             case 1:
-                type = GameManager.Random.getMapNext(0, 14);
+                type = GameManager.Random.getMapNext(0, 13);
                 break;
             case 2:
                 type = GameManager.Random.getMapNext(0, 3);
@@ -249,7 +249,7 @@ public class MapGen
         }
         // Generate Room Prefab
 //        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room"+ size.ToString() + " " + type.ToString(), roomObj.transform).GetComponent<DunRoom>();
-        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room1", roomObj.transform).GetComponent<DunRoom>();
+        DunRoom room = GameManager.Resource.Instantiate("Dungeon/Room/Room1 0", roomObj.transform).GetComponent<DunRoom>();
         room.gameObject.transform.SetParent(room.transform);
         Vector2 pos = new Vector2();
 

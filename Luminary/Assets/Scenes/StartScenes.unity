@@ -288,6 +288,11 @@ MonoBehaviour:
   castFillin: {fileID: 0}
   castT: 0
   castStartT: 0
+  maxHP: 0
+  maxMana: 0
+  currentHP: 0
+  currentMana: 0
+  player: {fileID: 0}
 --- !u!1 &339034421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3735164814193579668, guid: 4750728aa6c5b614f8913d569c30a4e8,

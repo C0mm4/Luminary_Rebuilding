@@ -14,7 +14,7 @@
 		<spd>7</spd>
                 <elements>1</elements>
                 <path>Spell/Fire/SpellFire</path>
-		<spr>Spells/Icon/TestSpell</spr>
+		<spr>Spells/Icon/Fire/Icon_Fire</spr>
                 <type>projectile</type>
 	</spell>
 	<spell>

@@ -154,6 +154,7 @@ MonoBehaviour:
   ActiveAtk: {fileID: 0}
   sawDirect: {x: 0, y: 0}
   isCollider: 0
+  spawnActive: 0
   isSpawnAction: 1
 --- !u!70 &3946516618487770308
 CapsuleCollider2D:

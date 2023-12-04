@@ -198,3 +198,4 @@ MonoBehaviour:
   instance: {fileID: 0}
   shadow: {fileID: 0}
   isFall: 0
+  isActivate: 0

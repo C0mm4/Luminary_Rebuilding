@@ -78,22 +78,26 @@ public class EnchantTable : Menu
         {
             if (targetItem.data.type == 0)
             {
+                Debug.Log(GameManager.player.GetComponent<Player>().status.strength);
                 GameManager.player.GetComponent<Player>().status.weapons[originSlotindex].RemoveItem();
             }
         }
         GameManager.player.GetComponent<Player>().calcStatus();
-        Debug.Log(GameManager.player.GetComponent<Player>().status.Intellect);
+        Debug.Log(GameManager.player.GetComponent<Player>().status.strength);
         targetItem.data.StatusUpgrade();
         if (isEquip)
         {
             if (targetItem.data.type == 0)
             {
+                Debug.Log(targetItem.data.status.strength);
                 GameManager.player.GetComponent<Player>().status.weapons[originSlotindex].AddItem(targetItem);
             }
         }
 
+        Debug.Log(GameManager.player.GetComponent<Player>().status.strength);
         GameManager.player.GetComponent<Player>().calcStatus();
         GameManager.player.GetComponent<Player>().status.gold -= targetItem.data.increaseStatus.baseGold + targetItem.data.level * targetItem.data.increaseStatus.increaseGold;
+        Debug.Log(GameManager.player.GetComponent<Player>().status.strength);
         setData();
     }
 }

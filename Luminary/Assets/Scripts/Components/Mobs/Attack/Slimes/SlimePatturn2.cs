@@ -8,7 +8,7 @@ public class SlimePatturn2 : Patturn
     bool isRoomDataSet;
     List<GameObject> shadows;
     List<GameObject> jellys;
-
+    List<Transform> pos;
     public override void Update()
     {
         if (issetData)
@@ -33,12 +33,13 @@ public class SlimePatturn2 : Patturn
         yield return new WaitForSeconds(1f);
         jellys = new List<GameObject>();
         shadows = new List<GameObject>();
+        pos = new List<Transform>();
         for(int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 7; j++)
             {
                 yield return new WaitForSeconds(0.15f);
-                GameObject go = GameManager.Resource.Instantiate("Mobs/Slime/AttackPrefabs/RainShadow",transform);
+                GameObject go = GameManager.Resource.Instantiate("Mobs/Shadows",transform);
                 GameObject go2 = GameManager.Resource.Instantiate("Mobs/Slime/AttackPrefabs/Rain", transform);
                 float rX = (float) GameManager.Random.getGeneralNext(v1.x, v2.x);
                 float rY = (float)GameManager.Random.getGeneralNext(v1.y, v2.y);
@@ -48,11 +49,13 @@ public class SlimePatturn2 : Patturn
                     rY = (float)GameManager.Random.getGeneralNext(v1.y, v2.y);
                 }
                 go.transform.position = new Vector3(rX, rY, 0);
+                go.transform.localScale = new Vector2(0.5f, 0.5f);
                 go2.transform.position = go.transform.position + new Vector3(0, 22, -22);
                 go2.GetComponent<Rain>().shadow = go.GetComponent<RainShadow>();
                 go2.GetComponent<MobAttack>().setData(mob);
                 shadows.Add(go);
                 jellys.Add(go2);
+                pos.Add(go.transform);
             }
 
             yield return new WaitForSeconds(1f);
@@ -87,9 +90,9 @@ public class SlimePatturn2 : Patturn
 
     public bool isNear(float x, float y)
     {
-        foreach(GameObject go in shadows)
+        foreach(Transform go in pos)
         {
-            Vector2 pos = go.transform.position;
+            Vector2 pos = go.position;
             float distance = Mathf.Sqrt(Mathf.Pow(pos.x - x, 2) + Mathf.Pow(pos.y - y, 2));
             if (distance <= 0.25f)
                 return true;

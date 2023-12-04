@@ -70,7 +70,6 @@ public class StableUI : MonoBehaviorObj
         Debug.Log("init");
         player = GameManager.player.GetComponent<Player>();
         FreshMaxHPMP();
-        FreshHPMP();
         castBar.SetActive(false);
     }
 
@@ -81,7 +80,6 @@ public class StableUI : MonoBehaviorObj
         if(GameManager.gameState == GameState.InPlay)
         {
             // Freshing HP, MP Bar
-            FreshHPMP();
             FreshMaxHPMP();
 
             // Casting Bar UI
@@ -123,7 +121,7 @@ public class StableUI : MonoBehaviorObj
 
     public void FreshMaxHPMP()
     {
-        if(maxHP != GameManager.player.GetComponent<Player>().status.maxHP)
+        if(maxHP != GameManager.player.GetComponent<Player>().status.maxHP || currentHP != GameManager.player.GetComponent<Player>().status.currentHP)
         {
             maxHP = GameManager.player.GetComponent<Player>().status.maxHP;
             foreach (GameObject hp in HPBar)
@@ -132,7 +130,7 @@ public class StableUI : MonoBehaviorObj
 
             }
             HPBar.Clear();
-            for(int i = 0; i < currentHP; i++)
+            for(int i = 0; i < maxHP; i++)
             {
                 GameObject go = new GameObject();
                 go.AddComponent<RectTransform>();
@@ -142,10 +140,39 @@ public class StableUI : MonoBehaviorObj
                 go.AddComponent<SpriteRenderer>();
                 if (i == 0)
                 {
-                    go.GetComponent<SpriteRenderer>().sprite = FillHP_L;
+                    go.GetComponent<SpriteRenderer>().sprite = BlankHP_L;
                     Debug.Log("Left");
                 }
                 else if(i == maxHP - 1)
+                {
+                    go.GetComponent<SpriteRenderer>().sprite = BlankHP_R;
+                }
+                else
+                {
+                    go.GetComponent<SpriteRenderer>().sprite = BlankHP_C;
+                }
+                HPBar.Add(go);
+            }
+
+            currentHP = GameManager.player.GetComponent<Player>().status.currentHP;
+            foreach(GameObject hp in currentHPBar)
+            {
+                GameManager.Resource.Destroy(hp);
+            }
+            currentHPBar.Clear();
+            for(int i = 0; i < currentHP; i++)
+            {
+                GameObject go = new GameObject();
+                go.AddComponent<RectTransform>();
+                go.transform.SetParent(HP.transform, false);
+                go.GetComponent<RectTransform>().localScale = Vector3.one;
+                go.GetComponent<RectTransform>().localPosition = new Vector3(i * 0.64f, 0, 0);
+                go.AddComponent<SpriteRenderer>();
+                if (i == 0)
+                {
+                    go.GetComponent<SpriteRenderer>().sprite = FillHP_L;
+                }
+                else if (i == maxHP - 1)
                 {
                     go.GetComponent<SpriteRenderer>().sprite = FillHP_R;
                 }
@@ -153,10 +180,10 @@ public class StableUI : MonoBehaviorObj
                 {
                     go.GetComponent<SpriteRenderer>().sprite = FillHP_C;
                 }
-                HPBar.Add(go);
+                currentHPBar.Add(go);
             }
         }
-        if(maxMana != GameManager.player.GetComponent<Player>().status.maxMana)
+        if(maxMana != GameManager.player.GetComponent<Player>().status.maxMana || currentMana != GameManager.player.GetComponent<Player>().status.currentMana)
         {
             maxMana = GameManager.player.GetComponent<Player>().status.maxMana;
             foreach (GameObject hp in MPBar)
@@ -186,45 +213,6 @@ public class StableUI : MonoBehaviorObj
                     go.GetComponent<SpriteRenderer>().sprite = BlankMP_C;
                 }
             }
-        }
-    }
-
-    public void FreshHPMP()
-    {
-        if (currentHP != GameManager.player.GetComponent<Player>().status.currentHP)
-        {
-            currentHP = GameManager.player.GetComponent<Player>().status.currentHP;
-            foreach (GameObject hp in currentHPBar)
-            {
-                GameManager.Resource.Destroy(hp);
-
-            }
-            currentHPBar.Clear();
-            for (int i = 0; i < currentHP; i++)
-            {
-                GameObject go = new GameObject();
-                go.AddComponent<RectTransform>();
-                go.transform.SetParent(HP.transform, false);
-                go.GetComponent<RectTransform>().localScale = Vector3.one;
-                go.GetComponent<RectTransform>().localPosition = new Vector3(i * 0.64f, 0, 0);
-                go.AddComponent<SpriteRenderer>();
-                if (i == 0)
-                {
-                    go.GetComponent<SpriteRenderer>().sprite = FillHP_L;
-                }
-                else if (i == maxHP - 1)
-                {
-                    go.GetComponent<SpriteRenderer>().sprite = FillHP_R;
-                }
-                else
-                {
-                    go.GetComponent<SpriteRenderer>().sprite = FillHP_C;
-                }
-                currentHPBar.Add(go);
-            }
-        }
-        if (currentMana != GameManager.player.GetComponent<Player>().status.currentMana)
-        {
             currentMana = GameManager.player.GetComponent<Player>().status.currentMana;
             foreach (GameObject hp in currentMPBar)
             {
@@ -254,7 +242,8 @@ public class StableUI : MonoBehaviorObj
                 }
                 currentMPBar.Add(go);
             }
-            
+
         }
     }
+
 }
