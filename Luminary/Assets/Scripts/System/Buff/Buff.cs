@@ -23,6 +23,8 @@ public abstract class Buff
 
     Sprite img;
 
+    public string text;
+
     public int id;
     public int stack = 0;
     // Generate Buff objects setting on target, and attacker

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2143279033430928694}
   - component: {fileID: 1229391564444300774}
-  - component: {fileID: -6074274536524909803}
-  - component: {fileID: -5413865937935123319}
+  - component: {fileID: 7249775199278190231}
+  - component: {fileID: 6923153144443886284}
   m_Layer: 0
   m_Name: SpellFireWall
   m_TagString: SpellEffect
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1229391564444300774
 SpriteRenderer:
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4ec441e24885b124d8bf7413ce05ce28, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dee20b81dd52c4e48b83fb639cfa5e7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,8 +86,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &-6074274536524909803
-CircleCollider2D:
+--- !u!114 &7249775199278190231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161906691538800149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98c0f8fe3252994a90e156fc1511280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  spawnTime: 0
+  currentTime: 0
+  deltaTime: 0
+  spawnPos: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
+  target: {fileID: 0}
+  mos: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
+  dmg: 0
+  isGen: 0
+  speed: 0
+  TickTime: 1
+--- !u!70 &6923153144443886284
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,30 +140,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.28
---- !u!114 &-5413865937935123319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5161906691538800149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd407a1b93cbc244884a9b77dbb1e5ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTime: 0
-  currentTime: 0
-  deltaTime: 0
-  spawnPos: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
-  target: {fileID: 0}
-  mos: {x: 0, y: 0, z: 0}
-  pos: {x: 0, y: 0, z: 0}
-  speed: 14
+  m_Offset: {x: 0, y: 0.05}
+  m_Size: {x: 0.4, y: 0.6}
+  m_Direction: 0

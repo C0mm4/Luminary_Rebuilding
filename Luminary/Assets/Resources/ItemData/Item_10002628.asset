@@ -17,7 +17,7 @@ MonoBehaviour:
   enchantType: 0
   level: 0
   itemName: HolyStaff4
-  itemIndex: 10002628
+  itemIndex: 10002611
   spellnum: 10003804
   funcName: StatusEquip
   baseDex: 1

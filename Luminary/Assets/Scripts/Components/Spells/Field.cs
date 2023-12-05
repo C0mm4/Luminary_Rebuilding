@@ -6,19 +6,16 @@ public class Field : SpellObj
 {
     [SerializeField]
     float speed;
-
+    [SerializeField]
     float TickTime = 1f;
     float lastTickTime;
-    bool onTick;
 
-    List<GameObject> trig;
+    List<KeyValuePair<GameObject, float>> dmgList = new List<KeyValuePair<GameObject, float>>();
 
     public override void Start()
     {
         base.Start();
-        lastTickTime = Time.time - TickTime;
-        onTick = true;
-        trig = new List<GameObject>();
+
     }
 
     public override void Update()
@@ -29,46 +26,34 @@ public class Field : SpellObj
         {
             GameManager.Resource.Destroy(gameObject);
         }
-
-        if (!onTick)
+        List<KeyValuePair<GameObject, float>> delList = new List<KeyValuePair<GameObject, float>>();
+        foreach(var kvp in dmgList)
         {
-            if(Time.time - lastTickTime >= TickTime)
+            if(Time.time - kvp.Value >= TickTime)
             {
-                onTick = true;
+                delList.Add(kvp);
             }
         }
-        else
+        foreach(var kvp in delList)
         {
-            foreach(GameObject obj in trig)
-            {
-                setDMG();
-                obj.GetComponent<Charactor>().HPDecrease(dmg);
-                onTick = false;
-
-            }
-            trig.Clear();
+            dmgList.Remove(kvp);
         }
+        
     }
 
 
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        GameObject obj = trig.Find(go => go.GetHashCode() == collision.GetHashCode());
-        if(obj != null)
-        {
-            trig.Remove(obj);
-        }
-    }
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Mob")
+        if (other.tag == "Mob")
         {
-            GameObject obj = trig.Find(go => go.GetHashCode().Equals(other.gameObject.GetHashCode()));
-            if(obj == null)
+            if(!IsObjInList(other.gameObject))
             {
-                trig.Add(other.gameObject);
+                KeyValuePair<GameObject, float> kv = new KeyValuePair<GameObject, float>(other.gameObject, Time.time);
+                dmgList.Add(kv);
+                setDMG();
+                other.GetComponent<Charactor>().HPDecrease(dmg);
             }
         }
     }
@@ -78,4 +63,15 @@ public class Field : SpellObj
 
     }
 
+    public bool IsObjInList(GameObject tar)
+    {
+        foreach(var go in dmgList)
+        {
+            if(go.Key.GetHashCode() == tar.GetHashCode())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

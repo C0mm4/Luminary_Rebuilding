@@ -98,6 +98,7 @@ public class SpellObj : MonoBehaviorObj
         if (IsPointInsideEllipse(direction))
         {
             // 점이 타원 안에 있는 경우 해당 점을 반환합니다.
+            point.z = -1;
             return point;
         }
         else
@@ -119,7 +120,7 @@ public class SpellObj : MonoBehaviorObj
 
             // 타원 경계와 교차하는 지점을 계산합니다.
             Vector3 intersectionPoint = spawnPos + normalizedDirection * x + Vector3.up * y;
-
+            intersectionPoint.z = -1;
             return intersectionPoint;
         }
     }

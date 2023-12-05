@@ -7,12 +7,23 @@ public class MobAttack : MonoBehaviorObj
 {
     public Mob shooter;
     public MobAttack instance;
+    public bool isSet;
 
     public void Awake()
     {
         instance = this;
     }
 
+    public void Update()
+    {
+        if(isSet)
+        {
+            if(shooter != null)
+            {
+                GameManager.Resource.Destroy(gameObject);
+            }
+        }
+    }
 
     public void Destroy()
     {
@@ -38,6 +49,7 @@ public class MobAttack : MonoBehaviorObj
     public virtual void setData(Mob mob)
     {
         shooter = mob;
+        isSet = true;
     }
 
     public virtual void setData(Mob mob, Vector3 pos)
