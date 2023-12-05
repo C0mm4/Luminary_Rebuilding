@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2658388385335573208}
   - component: {fileID: 7543481563577147170}
   - component: {fileID: 4416327909536164280}
-  - component: {fileID: -363467905770636945}
   m_Layer: 0
   m_Name: SpellStoneShower
   m_TagString: SpellEffect
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65dd17fb534cc4a43833166b7e079029, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3bfc93dd5708ca94599be83a89df53d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,24 +120,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.28
---- !u!114 &-363467905770636945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5944328252796013934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8403d9d63d3af2c479cd194c7334c947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTime: 0
-  currentTime: 0
-  deltaTime: 0
-  spawnPos: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
-  target: {fileID: 0}
-  mos: {x: 0, y: 0, z: 0}
-  pos: {x: 0, y: 0, z: 0}
-  speed: 14

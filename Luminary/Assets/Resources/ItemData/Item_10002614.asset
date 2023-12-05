@@ -17,7 +17,7 @@ MonoBehaviour:
   enchantType: 0
   level: 0
   itemName: FireStaff4
-  itemIndex: 10002614
+  itemIndex: 10002609
   spellnum: 10003003
   funcName: StatusEquip
   baseDex: 1

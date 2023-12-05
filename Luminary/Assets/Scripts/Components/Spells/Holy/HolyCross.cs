@@ -7,6 +7,7 @@ public class HolyCross : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 50;
         base.Start();
     }
 

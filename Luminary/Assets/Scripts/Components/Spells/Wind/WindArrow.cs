@@ -7,6 +7,7 @@ public class WindArrow : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 10;
         base.Start();
     }
 

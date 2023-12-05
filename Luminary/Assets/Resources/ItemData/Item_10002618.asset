@@ -17,7 +17,7 @@ MonoBehaviour:
   enchantType: 0
   level: 0
   itemName: WindStaff4
-  itemIndex: 10002618
+  itemIndex: 10002613
   spellnum: 10003203
   funcName: StatusEquip
   baseDex: 1

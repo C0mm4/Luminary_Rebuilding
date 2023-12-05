@@ -7,6 +7,7 @@ public class FireBolt : Projectile
     float rotateAngle;
     public override void Start()
     {
+        intpower = 8;
         base.Start();
     }
 
@@ -24,11 +25,6 @@ public class FireBolt : Projectile
     {
         base.Debuffs(target);
         new Ignite(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
-    }
-
-    public override void setDMG()
-    {
-        dmg = ((data.damage + player.GetComponent<Player>().status.Intellect * 8) * player.GetComponent<Player>().status.finalDMG);
     }
 
 }

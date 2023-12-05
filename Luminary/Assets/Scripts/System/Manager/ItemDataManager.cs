@@ -96,10 +96,11 @@ public class ItemDataManager : MonoBehaviour
             {
                 rarity = 5;
             }
-            else if (rnd < 85)
+            else if (rnd < 100) // 85
             {
                 rarity = 6;
             }
+/*
             else if (rnd < 95)
             {
                 rarity = 7;
@@ -108,6 +109,7 @@ public class ItemDataManager : MonoBehaviour
             {
                 rarity = 8;
             }
+*/
         }
         else
         {
@@ -175,5 +177,11 @@ public class ItemDataManager : MonoBehaviour
         return item;
     }
 
-
+    public (Item, Item) BaseStaff()
+    {
+        int index = 10002500;
+        Item item = ItemGen(index + GameManager.Random.getShopNext(1, staffcN + 1));
+        Item item2 = ItemGen(index + GameManager.Random.getShopNext(1, staffcN + 1));
+        return (item, item2);
+    }
 }

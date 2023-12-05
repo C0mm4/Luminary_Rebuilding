@@ -7,6 +7,7 @@ public class RockBullet : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 6;
         base.Start();
     }
 

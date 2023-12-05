@@ -17,7 +17,7 @@ MonoBehaviour:
   enchantType: 0
   level: 0
   itemName: IceStaff3
-  itemIndex: 10002615
+  itemIndex: 10002610
   spellnum: 10003102
   funcName: StatusEquip
   baseDex: 1

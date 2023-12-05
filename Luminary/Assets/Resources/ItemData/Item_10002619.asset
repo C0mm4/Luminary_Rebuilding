@@ -17,7 +17,7 @@ MonoBehaviour:
   enchantType: 0
   level: 0
   itemName: StoneStaff3
-  itemIndex: 10002619
+  itemIndex: 10002614
   spellnum: 10003302
   funcName: StatusEquip
   baseDex: 1

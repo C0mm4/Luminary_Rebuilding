@@ -17,7 +17,7 @@ MonoBehaviour:
   enchantType: 0
   level: 0
   itemName: LightningStaff2
-  itemIndex: 10002605
+  itemIndex: 10002604
   spellnum: 10003502
   funcName: StatusEquip
   baseDex: 1

@@ -11,6 +11,7 @@ public class Player : Charactor
     public SkillSlot[] skillslots;
     public List<SkillSlot> spells;
     public SkillSlot currentSpell;
+    public int currentSpellIndex;
 
     [SerializeField]
     InteractionTrriger interactionTrriger;
@@ -43,6 +44,7 @@ public class Player : Charactor
         sMachine.changeState(new PlayerIdleState());
         isInit = true;
         currentSpell = skillslots[1];
+        currentSpellIndex = 0;
 
     }
     private void setSkillSlots()
@@ -170,17 +172,15 @@ public class Player : Charactor
             // Q button is Weapon Slot Change
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (currentSpell == skillslots[1])
+                if(currentSpellIndex == 0)
                 {
-                    Debug.Log("SpellSlot Change 2");
+                    currentSpellIndex = 1;
                     currentSpell = skillslots[2];
-                    GameManager.Instance.uiManager.stableUI.GetComponent<StableUI>().WeaponSlotChange(0);
                 }
                 else
                 {
-                    Debug.Log("SpellSlot Change 1");
+                    currentSpellIndex = 0;
                     currentSpell = skillslots[1];
-                    GameManager.Instance.uiManager.stableUI.GetComponent<StableUI>().WeaponSlotChange(1);
                 }
             }
         }

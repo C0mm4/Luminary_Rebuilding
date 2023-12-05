@@ -20,6 +20,8 @@ public class SpellObj : MonoBehaviorObj
 
     public bool isGen = false;
 
+    public int intpower;
+
     public virtual void Start()
     {
         player = GameManager.player;
@@ -47,7 +49,7 @@ public class SpellObj : MonoBehaviorObj
     // damage set
     public virtual void setDMG()
     {
-        dmg = (data.damage * player.GetComponent<Player>().status.finalDMG);
+        dmg = ((data.damage + intpower * player.GetComponent<Player>().status.Intellect) * player.GetComponent<Player>().status.finalDMG);
     }
     // trigger with mob, wall
     public virtual void OnTriggerEnter2D(Collider2D other)

@@ -1025,7 +1025,7 @@
 		<Index>10003801</Index>
 		<name>Holy</name>
 		<circle>1</circle>
-		<damage>25</damage>
+		<damage>0</damage>
 		<hits>1</hits>
 		<projectileN>1</projectileN>
 		<xRange>6</xRange>
@@ -1042,7 +1042,7 @@
 		<Index>10003802</Index>
 		<name>Holycross</name>
 		<circle>2</circle>
-		<damage>50</damage>
+		<damage>0</damage>
 		<hits>1</hits>
 		<projectileN>1</projectileN>
 		<xRange>8</xRange>

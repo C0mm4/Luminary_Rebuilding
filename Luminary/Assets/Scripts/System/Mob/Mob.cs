@@ -207,7 +207,8 @@ public class Mob : Charactor
         {
             if (isHitbox[n])
             {
-                GameManager.Resource.Destroy(ActiveAtk.gameObject);
+                if(ActiveAtk != null)
+                    GameManager.Resource.Destroy(ActiveAtk.gameObject);
             }
             endCurrentState();
 

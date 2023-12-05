@@ -7,6 +7,7 @@ public class LightningBall : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 0;
         base.Start();
     }
 

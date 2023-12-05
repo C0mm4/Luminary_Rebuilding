@@ -8,6 +8,8 @@ public class FireBall : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+
+        intpower = 10;
         base.Start();
     }
 
@@ -27,8 +29,4 @@ public class FireBall : Projectile
         new Ignite(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
     }
 
-    public override void setDMG()
-    {
-        dmg = ((data.damage + player.GetComponent<Player>().status.Intellect * 10) * player.GetComponent<Player>().status.finalDMG);
-    }
 }

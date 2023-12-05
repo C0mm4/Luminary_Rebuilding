@@ -7,6 +7,7 @@ public class WindScrew : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 5;
         base.Start();
     }
 
@@ -22,6 +23,6 @@ public class WindScrew : Projectile
     public override void Debuffs(GameObject target)
     {
         base.Debuffs(target);
-        new Ignite(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
+        new Flow(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
     }
 }

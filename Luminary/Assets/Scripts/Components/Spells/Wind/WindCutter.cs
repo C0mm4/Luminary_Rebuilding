@@ -7,6 +7,7 @@ public class WindCutter : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 8;
         base.Start();
     }
 

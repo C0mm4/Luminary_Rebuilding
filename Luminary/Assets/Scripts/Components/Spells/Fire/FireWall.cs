@@ -7,6 +7,7 @@ public class FireWall : Field
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 4;
         base.Start();
     }
 
@@ -14,5 +15,10 @@ public class FireWall : Field
     public override void Update()
     {
         base.Update();
+    }
+    public override void Debuffs(GameObject target)
+    {
+        base.Debuffs(target);
+        new Ignite(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
     }
 }

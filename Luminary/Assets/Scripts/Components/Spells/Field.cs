@@ -54,6 +54,7 @@ public class Field : SpellObj
                 dmgList.Add(kv);
                 setDMG();
                 other.GetComponent<Charactor>().HPDecrease(dmg);
+                Debuffs(other.gameObject);
             }
         }
     }

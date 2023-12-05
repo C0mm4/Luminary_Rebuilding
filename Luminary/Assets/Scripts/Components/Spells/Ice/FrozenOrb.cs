@@ -7,6 +7,7 @@ public class FrozenOrb : Projectile
     float rotateAngle;
     public override void Start()
     {
+        intpower = 4;
         base.Start();
     }
 

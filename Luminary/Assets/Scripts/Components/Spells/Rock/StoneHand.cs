@@ -7,6 +7,7 @@ public class StoneHand : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 5;
         base.Start();
     }
 

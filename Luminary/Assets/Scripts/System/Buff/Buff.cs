@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 
 public abstract class Buff
@@ -36,6 +38,7 @@ public abstract class Buff
         target = tar;
         attacker = atk;
         instance = this;
+        text = instance.GetType().Name;
     }
     // Set Buffs Durae Time
     public void setDurate(float d)
@@ -66,7 +69,11 @@ public abstract class Buff
         // Set Start Time, Tick Time
         startTime = Time.time;
         lastTickTime = startTime;
-        
+        GameObject go = GameManager.Resource.Instantiate("UI/Buff/BuffTxt");
+        go.GetComponent<TMP_Text>().text = text;
+        go.GetComponent<BuffUI>().pos = target.transform.position;
+        go.GetComponent<BuffUI>().pos.y += 0.5f;
+        Func.SetRectTransform(go, GameManager.cameraManager.camera.WorldToViewportPoint(target.transform.position));
     }
 
     public virtual void durateEffect()
@@ -97,6 +104,11 @@ public abstract class Buff
         // base.resetEffect();
 
         // delete already exists same buffs, and register new buffs
+        GameObject go = GameManager.Resource.Instantiate("UI/Buff/BuffTxt");
+        go.GetComponent<TMP_Text>().text = text;
+        go.GetComponent<BuffUI>().pos = target.transform.position;
+        go.GetComponent<BuffUI>().pos.y += 0.5f;
+        Func.SetRectTransform(go, GameManager.cameraManager.camera.WorldToViewportPoint(target.transform.position));
         target.status.buffs.RemoveAt(i);
         target.status.buffs.Add(instance);
     }

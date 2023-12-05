@@ -109,6 +109,7 @@ public class FSMManager
         // Mob Die State FSM
         mobFSM = new List<string>()
         {
+            mobState[6]
         };
         fsm[mobState[6]] = mobFSM;
 

@@ -26,6 +26,7 @@ public class Sentence : Buff
             target.HPDecrease(dmg);
             target.status.pGetDMG += 2;
             target.calcStatus();
+            text = instance.GetType().Name + " X" + stack.ToString();
             base.startEffect();
         }
     }
@@ -34,7 +35,8 @@ public class Sentence : Buff
     {
         stack = target.status.buffs[i].stack + 1;
         target.status.pGetDMG += 2;
-        target.calcStatus() ;
+        target.calcStatus();
+        text = instance.GetType().Name + " X" + stack.ToString();
         base.resetEffect(i);
     }
 

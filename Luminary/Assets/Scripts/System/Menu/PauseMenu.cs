@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : Menu
@@ -16,6 +17,10 @@ public class PauseMenu : Menu
         base.Start();
         menusize = 2;
         currentMenu = 0;
+        if(SceneManager.GetActiveScene().name != "LobbyScene")
+        {
+            texts[1].text = "Go To Lobby";
+        }
     }
 
     public override void ConfirmAction()

@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrostNova : MonoBehaviour
+public class FrostNova : Field
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        
+        intpower = 10;
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        
+        base.Update();
+    }
+    public override void Debuffs(GameObject target)
+    {
+        base.Debuffs(target);
+        new Freeze(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
     }
 }

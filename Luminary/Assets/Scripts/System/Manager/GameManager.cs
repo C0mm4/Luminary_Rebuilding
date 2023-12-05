@@ -279,7 +279,6 @@ public class GameManager : MonoBehaviour
         }
         gameState = GameState.InPlay;
         uiManager.ChangeState(UIState.InPlay);
-        uiManager.stableUI.GetComponent<StableUI>().WeaponSlotChange(0);
     }
 
     // Tutorial Scene Initialize
@@ -298,8 +297,10 @@ public class GameManager : MonoBehaviour
     {
         mapgen();
         playerGen();
-        Item item = itemDataManager.ItemGen(10003001);
-        player.GetComponent<Player>().Equip(0, item);
+        Item item1, item2;
+        (item1, item2) = itemDataManager.BaseStaff();
+        player.GetComponent<Player>().Equip(0, item1);
+        player.GetComponent<Player>().Equip(0, item2);
         cameraManager.background = MapGen.bg.GetComponent<SpriteRenderer>();
         StageC.moveRoom(0);
     }
@@ -430,4 +431,12 @@ public class GameManager : MonoBehaviour
         sceneControl("LobbyScene");
     }
 
+    public void GameQuit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

@@ -17,7 +17,7 @@ MonoBehaviour:
   enchantType: 0
   level: 0
   itemName: DeathStaff2
-  itemIndex: 10002607
+  itemIndex: 10002606
   spellnum: 10003702
   funcName: StatusEquip
   baseDex: 1

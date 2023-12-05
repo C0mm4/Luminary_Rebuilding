@@ -93,6 +93,8 @@ public class StableUI : MonoBehaviorObj
                 castBar.SetActive(false);
             }
         }
+        if(player != null)
+            WeaponSlotChange(player.currentSpellIndex);
     }
     // Set Casting Time
     public void setCast(float castT, float startT)

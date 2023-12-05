@@ -34,7 +34,7 @@ public class Func
             }
         }
     }
-    public static void SetRectTransform(GameObject go, Vector3 pos = default(Vector3))
+    public static void SetRectTransform(GameObject go, Vector3 pos = default)
     {
         RectTransform rt = go.GetComponent<RectTransform>();
         rt.transform.SetParent(GameManager.Instance.canvas.transform, false);

@@ -7,6 +7,7 @@ public class Death : Projectile
     // Start is called before the first frame update
     public override void Start()
     {
+        intpower = 10;
         base.Start();
     }
 
@@ -21,4 +22,5 @@ public class Death : Projectile
         base.Debuffs(target);
         new Sentence(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
     }
+
 }

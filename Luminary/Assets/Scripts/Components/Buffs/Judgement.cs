@@ -23,6 +23,7 @@ public class Judgement : Buff
             target.HPDecrease(dmg);
             target.status.pIncreaseSpeed -= 5;
             target.calcStatus();
+            text = instance.GetType().Name + " X" + stack.ToString();
             base.startEffect();
         }
     }
@@ -30,6 +31,7 @@ public class Judgement : Buff
     public override void resetEffect(int i)
     {
         stack = target.status.buffs[i].stack + 1;
+        text = instance.GetType().Name + " X" + stack.ToString();
         target.status.pIncreaseSpeed -= 5;
         target.calcStatus();
         base.resetEffect(i);

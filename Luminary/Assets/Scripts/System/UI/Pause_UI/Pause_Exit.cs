@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Pause_Exit : Choice
 {
@@ -10,9 +11,17 @@ public class Pause_Exit : Choice
     public PauseMenu pauseMenu;
     public override void Work()
     {
-        GameManager.Instance.pauseGame();
-        GameManager.Instance.uiManager.endMenu();
-        GameManager.Instance.GameReset();
+        if(SceneManager.GetActiveScene().name == "LobbyScene")
+        {
+            GameManager.Instance.GameQuit();
+        }
+        else
+        {
+            GameManager.Instance.pauseGame();
+            GameManager.Instance.uiManager.endMenu();
+            GameManager.Instance.GameReset();
+
+        }
     }
     public override void OnPointerHandler(PointerEventData eventData)
     {
