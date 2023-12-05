@@ -148,6 +148,8 @@ public class GameManager : MonoBehaviour
             mobSpawnner.init();
         }
         init();
+        soundManager.soundSetupInit(gameData.gameVolume, gameData.effectVolume, gameData.musicVolume, true);
+        soundManager.playBGM();
     }
 
     // Start is called before the first frame update
@@ -190,7 +192,6 @@ public class GameManager : MonoBehaviour
         StageC.init();
         Script.init();
         playerDataManager.playerDataInit();
-        soundManager.loadSkillSound("test");
     }
 
     // Loading Setting datas
@@ -202,7 +203,7 @@ public class GameManager : MonoBehaviour
         gameData.resolution.height = PlayerPrefs.GetInt("resolutionH", Screen.currentResolution.height);
         gameData.isFullscreen = PlayerPrefs.GetInt("isFullscreen", Screen.fullScreen ? 1 : 0) == 1;
         // load resolution
-
+        
         gameData.gameVolume = PlayerPrefs.GetFloat("gameVolume", 0.3f);
         gameData.effectVolume = PlayerPrefs.GetFloat("effectVolume", 0.3f);
         gameData.musicVolume = PlayerPrefs.GetFloat("musicVolume", 0.3f);
@@ -217,9 +218,10 @@ public class GameManager : MonoBehaviour
     
     public void sceneControl(string targetScene)
     {
+        
         gameState = GameState.Loading;
         SceneChangeAction?.Invoke();
-        
+        soundManager.bgmChange("InGame", 1.0f);
         sceneTransition.sceneLoad(targetScene);
     }
 
@@ -306,7 +308,6 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player>().Equip(0, item);
         cameraManager.background = MapGen.bg.GetComponent<SpriteRenderer>();
         StageC.moveRoom(0);
-       
     }
 
     public void gameOver()
