@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2658388385335573208}
   - component: {fileID: 7543481563577147170}
   - component: {fileID: 4416327909536164280}
-  - component: {fileID: 5357908733927043395}
+  - component: {fileID: 6859684477862548827}
   m_Layer: 0
   m_Name: SpellIce
   m_TagString: SpellEffect
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d8d1211f9f8d10a42a52793cf3f03d79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1401049a430947d439c41f7241e8cddc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06eee4661296c5e44bcf6dd6e18c916f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,8 +120,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.28
---- !u!114 &5357908733927043395
+  m_Radius: 0.1
+--- !u!114 &6859684477862548827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,9 +130,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5944328252796013934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fefddcf351d80e44b9538072bf9453fb, type: 3}
+  m_Script: {fileID: 11500000, guid: c14c4d39970829a40ab28afa77f7c193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   spawnTime: 0
   currentTime: 0
   deltaTime: 0
@@ -141,5 +142,7 @@ MonoBehaviour:
   target: {fileID: 0}
   mos: {x: 0, y: 0, z: 0}
   pos: {x: 0, y: 0, z: 0}
+  dmg: 0
+  isGen: 0
   speed: 7
   dir: {x: 0, y: 0, z: 0}

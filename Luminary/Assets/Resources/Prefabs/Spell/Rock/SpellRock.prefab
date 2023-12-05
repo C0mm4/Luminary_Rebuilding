@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2658388385335573208}
   - component: {fileID: 7543481563577147170}
   - component: {fileID: 4416327909536164280}
-  - component: {fileID: -7077467519703226417}
+  - component: {fileID: 6146390029937753766}
   m_Layer: 0
   m_Name: SpellRock
   m_TagString: SpellEffect
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d8d1211f9f8d10a42a52793cf3f03d79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65dd17fb534cc4a43833166b7e079029, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbf855f8f00d01747a2f9062e013d403, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,8 +120,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.28
---- !u!114 &-7077467519703226417
+  m_Radius: 0.1
+--- !u!114 &6146390029937753766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,9 +130,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5944328252796013934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6b45eef53f067944a02f003d6d9e6ac, type: 3}
+  m_Script: {fileID: 11500000, guid: b52a5fb96e52e2042b0cc649d79c0bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   spawnTime: 0
   currentTime: 0
   deltaTime: 0
@@ -141,5 +142,7 @@ MonoBehaviour:
   target: {fileID: 0}
   mos: {x: 0, y: 0, z: 0}
   pos: {x: 0, y: 0, z: 0}
-  speed: 7
+  dmg: 0
+  isGen: 0
+  speed: 5
   dir: {x: 0, y: 0, z: 0}

@@ -45,7 +45,7 @@ public class SpellObj : MonoBehaviorObj
     }
 
     // damage set
-    public void setDMG()
+    public virtual void setDMG()
     {
         dmg = (data.damage * player.GetComponent<Player>().status.finalDMG);
     }
@@ -58,6 +58,7 @@ public class SpellObj : MonoBehaviorObj
             {
                 setDMG();
                 other.GetComponent<Mob>().HPDecrease(dmg);
+                Debuffs(other.gameObject);
                 GameManager.Resource.Destroy(this.gameObject);
             }
             if (other.CompareTag("Wall"))
@@ -69,6 +70,11 @@ public class SpellObj : MonoBehaviorObj
 
             }
         }
+    }
+
+    public virtual void Debuffs(GameObject target)
+    {
+
     }
 
     // calculate Time

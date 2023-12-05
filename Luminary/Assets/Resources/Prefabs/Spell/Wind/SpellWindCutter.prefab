@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2658388385335573208}
   - component: {fileID: 7543481563577147170}
-  - component: {fileID: 4416327909536164280}
-  - component: {fileID: -4712427301200080690}
+  - component: {fileID: 2126668237664985914}
   m_Layer: 0
   m_Name: SpellWindCutter
   m_TagString: SpellEffect
@@ -30,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 337006552823890800}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d8d1211f9f8d10a42a52793cf3f03d79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3bb333ecc33f4e6498be26a12f0a65e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 110ec52c532da644a80d5c52788f1658, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,13 +86,70 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4416327909536164280
-CircleCollider2D:
+--- !u!114 &2126668237664985914
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5944328252796013934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e145024249db3642b82cb4faef4ac33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  spawnTime: 0
+  currentTime: 0
+  deltaTime: 0
+  spawnPos: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
+  target: {fileID: 0}
+  mos: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
+  dmg: 7
+  isGen: 0
+  speed: 0
+  dir: {x: 0, y: 0, z: 0}
+--- !u!1 &8812586325873250327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337006552823890800}
+  - component: {fileID: 151592329359481687}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &337006552823890800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8812586325873250327}
+  m_LocalRotation: {x: -0, y: -0, z: 0.39679918, w: 0.9179055}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2658388385335573208}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 46.756}
+--- !u!70 &151592329359481687
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8812586325873250327}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -115,31 +172,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.28
---- !u!114 &-4712427301200080690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5944328252796013934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c017f67cf3c65546b8aa602d4227e0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTime: 0
-  currentTime: 0
-  deltaTime: 0
-  spawnPos: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
-  target: {fileID: 0}
-  mos: {x: 0, y: 0, z: 0}
-  pos: {x: 0, y: 0, z: 0}
-  speed: 14
-  dir: {x: 0, y: 0, z: 0}
+  m_Offset: {x: 0.07, y: 0}
+  m_Size: {x: 0.2, y: 0.7}
+  m_Direction: 0

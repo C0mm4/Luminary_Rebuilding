@@ -5,29 +5,21 @@ using UnityEngine;
 
 public class SpellWind : Projectile
 {
-    
+    // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-        
     }
 
+    // Update is called once per frame
     public override void Update()
     {
         base.Update();
-        
     }
 
-    public override void OnTriggerEnter2D(Collider2D other)
+    public override void Debuffs(GameObject target)
     {
-        if (other.tag == "Mob")
-        {
-//          Buff newbuff = new WindBuff(other.gameObject.GetComponent<Charactor>(), player.GetComponent<Charactor>());
-
-            other.GetComponent<Charactor>().changeState(new MobHitState(other.transform.position - this.transform.position));
-        }
-
-        base.OnTriggerEnter2D(other);
+        base.Debuffs(target);
+        new Flow(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
     }
-
 }

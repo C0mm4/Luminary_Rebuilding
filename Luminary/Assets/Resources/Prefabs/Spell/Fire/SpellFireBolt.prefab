@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2143279033430928694}
   - component: {fileID: 1229391564444300774}
   - component: {fileID: -6074274536524909803}
-  - component: {fileID: -3811074916371041961}
+  - component: {fileID: 2728676761320101203}
   m_Layer: 0
   m_Name: SpellFireBolt
   m_TagString: SpellEffect
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1229391564444300774
 SpriteRenderer:
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d8d1211f9f8d10a42a52793cf3f03d79, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4ec441e24885b124d8bf7413ce05ce28, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67e5f415e1bc2384699289415986117d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.28
---- !u!114 &-3811074916371041961
+--- !u!114 &2728676761320101203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,9 +130,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5161906691538800149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 206bcd531a536c647ac9754418094e10, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d08f66a1870d674caf3d0a157240622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   spawnTime: 0
   currentTime: 0
   deltaTime: 0
@@ -141,5 +142,7 @@ MonoBehaviour:
   target: {fileID: 0}
   mos: {x: 0, y: 0, z: 0}
   pos: {x: 0, y: 0, z: 0}
-  speed: 15.75
+  dmg: 0
+  isGen: 0
+  speed: 7
   dir: {x: 0, y: 0, z: 0}

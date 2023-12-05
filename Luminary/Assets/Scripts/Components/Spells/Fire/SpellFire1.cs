@@ -15,4 +15,10 @@ public class SpellFire1 : Projectile
     {
         base.Update();
     }
+
+    public override void Debuffs(GameObject target)
+    {
+        base.Debuffs(target);
+        new Ignite(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
+    }
 }
