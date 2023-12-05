@@ -59,7 +59,7 @@ public class PlayerDataManager : MonoBehaviour
         
         playerStatus.def = 0;
 
-        playerStatus.baseHP = 3;
+        playerStatus.baseHP = 5;
         playerStatus.increseMaxHP = 0;
         playerStatus.pIncreaseMaxHP = 0;
         playerStatus.maxHP = (int)Mathf.Floor((playerStatus.baseHP + playerStatus.increseMaxHP) * (1+playerStatus.pIncreaseMaxHP));

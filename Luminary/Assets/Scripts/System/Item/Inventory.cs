@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.Playables;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class Inventory : Menu
 {

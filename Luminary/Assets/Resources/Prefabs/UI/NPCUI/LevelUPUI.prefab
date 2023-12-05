@@ -3065,6 +3065,7 @@ MonoBehaviour:
   menusize: 3
   currentMenu: 0
   closeButton: {fileID: 8707655458905692387}
+  confirmButton: {fileID: 2954612234103895318}
   totalSelect: 0
   strSelect: 0
   dexSelect: 0

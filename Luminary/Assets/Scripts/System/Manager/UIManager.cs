@@ -186,16 +186,22 @@ public class UIManager : MonoBehaviour
 
             if (invUI == null)
             {
+                try
+                {
+                    invUI = canvas.transform.Find("Inventory2(Clone)").gameObject;
 
-                invUI = canvas.transform.Find("Inventory2(Clone)").gameObject;
+                }
+                catch { }
             }
             if (GameManager.uiState == UIState.InPlay)
             {
-                stableUI.SetActive(true);
+                if(stableUI != null)
+                    stableUI.SetActive(true);
             }
             else
             {
-                stableUI.SetActive(false);
+                if(stableUI != null)
+                    stableUI.SetActive(false);
             }
         }
     }

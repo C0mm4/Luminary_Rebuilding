@@ -32,6 +32,8 @@ public class LevelUp : Menu
 
     public List<Image> statusBg;
 
+
+
     public int requireGold;
 
     public override void ConfirmAction()
@@ -91,6 +93,10 @@ public class LevelUp : Menu
                 currentMenu = 0;
                 statusBg[currentMenu].color = new Color(0, 0, 0, 100f / 256f);
             }
+            else if(currentMenu == 99)
+            {
+
+            }
             else
             {
                 UpHandler();
@@ -98,7 +104,16 @@ public class LevelUp : Menu
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
-            if(totalSelect == 0)
+            if(currentMenu == 99)
+            {
+                currentMenu = 0;
+                confirmButton.GetComponent<ConfirmButton>().outHandler();
+            }
+            else if(currentMenu == -1)
+            {
+
+            }
+            else if(totalSelect == 0)
             {
                 statusBg[currentMenu].color = new Color(1, 1, 1, 100f / 256f);
                 closeButton.GetComponent<UICloseButton>().inHandler();
@@ -133,20 +148,25 @@ public class LevelUp : Menu
 
     public void levelup()
     {
-        playerStatus.level += totalSelect;
-        playerStatus.strength += strSelect;
-        playerStatus.dexterity += dexSelect;
-        playerStatus.Intellect += intSelect;
-        totalSelect = 0;
-        strSelect = 0;
-        dexSelect = 0;
-        intSelect = 0;
-        GameManager.player.GetComponent<Player>().status = playerStatus;
-        int hp = playerStatus.maxHP;
-        GameManager.player.GetComponent<Player>().calcStatus();
-        Debug.Log(GameManager.player.GetComponent<Player>().status.maxHP - hp);
-        GameManager.player.GetComponent<Player>().status.currentHP += GameManager.player.GetComponent<Player>().status.maxHP - hp;
-        playerStatus.currentHP += GameManager.player.GetComponent<Player>().status.maxHP - hp;
+        if(tmpStatus.gold >= 0)
+        {
+            playerStatus.gold = tmpStatus.gold;
+            playerStatus.level += totalSelect;
+            playerStatus.strength += strSelect;
+            playerStatus.dexterity += dexSelect;
+            playerStatus.Intellect += intSelect;
+            totalSelect = 0;
+            strSelect = 0;
+            dexSelect = 0;
+            intSelect = 0;
+            GameManager.player.GetComponent<Player>().status = playerStatus;
+            int hp = playerStatus.maxHP;
+            GameManager.player.GetComponent<Player>().calcStatus();
+            Debug.Log(GameManager.player.GetComponent<Player>().status.maxHP - hp);
+            GameManager.player.GetComponent<Player>().status.currentHP += GameManager.player.GetComponent<Player>().status.maxHP - hp;
+            playerStatus.currentHP += GameManager.player.GetComponent<Player>().status.maxHP - hp;
+
+        }
         DataSet();
     }
 

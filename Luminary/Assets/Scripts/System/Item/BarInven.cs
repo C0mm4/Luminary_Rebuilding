@@ -22,7 +22,6 @@ public class BarInven : Menu
 
     public Player player;
 
-    public GameObject confirmButton;
 
     public GameObject curGold;
 

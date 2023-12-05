@@ -261,11 +261,11 @@ public class GameManager : MonoBehaviour
         SpriteRenderer lobbyField = GameObject.Find("BackGround").GetComponent<SpriteRenderer>();
         cameraManager.camera = mainCamera;
         cameraManager.background = lobbyField;
+
         playerGen();
         uiManager.ChangeState(UIState.Lobby);
         gameState = GameState.InPlay;
 
-        StageC.currentRoom = 0;
     }
 
     // Stage Scene Initialize
@@ -307,6 +307,8 @@ public class GameManager : MonoBehaviour
     public void gameOver()
     {
         // end
+
+        GameManager.Instance.sceneControl("LobbyScene");
     }
 
     
@@ -341,7 +343,14 @@ public class GameManager : MonoBehaviour
 
     public void gameEnd()
     {
+        StartCoroutine(gameEndSceneChange());
+    }
 
+    public IEnumerator gameEndSceneChange()
+    {
+        yield return new WaitForSeconds(1f);
+
+        sceneControl("LobbyScene");
     }
 
     public void stageEnd()

@@ -7,6 +7,7 @@ public abstract class Menu : MonoBehaviorObj
     public int menusize;
     public int currentMenu;
     public GameObject closeButton;
+    public GameObject confirmButton;
 
     // Set Menu Stack on UIManager
     public virtual void Start()

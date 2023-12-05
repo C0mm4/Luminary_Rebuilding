@@ -51,6 +51,7 @@ public class SlimePatturn2 : Patturn
                 go.transform.position = new Vector3(rX, rY, 0);
                 go.transform.localScale = new Vector2(0.5f, 0.5f);
                 go2.GetComponent<Rain>().shadow = go.GetComponent<RainShadow>();
+                go2.transform.position = go.transform.position;
                 go2.GetComponent<MobAttack>().setData(mob);
                 shadows.Add(go);
                 jellys.Add(go2);

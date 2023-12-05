@@ -83,10 +83,7 @@ public class Mob : Charactor
                 }
                 catch
                 {
-                    if (getState().GetType().Name != "MobStunState")
-                    {
-                        sMachine.changeState(new MobIdleState());
-                    }
+                    setIdleState();
                 }
             }
 
@@ -106,16 +103,6 @@ public class Mob : Charactor
         {
             GameManager.StageC.ClearRoom();
         }
-        List<GameObject> atks = new List<GameObject>();
-        foreach(MobAttack atk in AtkObj)
-        {
-            atks.Add(atk.gameObject);
-        }
-        foreach(GameObject atk in atks)
-        {
-            GameManager.Resource.Destroy(atk);
-        }
-        atks.Clear();
         AtkObj.Clear();
         GameManager.player.GetComponent<Player>().status.gold += data.dropGold;
         model.DestroyHandler();

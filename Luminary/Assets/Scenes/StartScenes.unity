@@ -865,6 +865,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6969091774091618434, guid: 4750728aa6c5b614f8913d569c30a4e8,
+        type: 3}
+      propertyPath: mobLists.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969091774091618434, guid: 4750728aa6c5b614f8913d569c30a4e8,
+        type: 3}
+      propertyPath: mobLists.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8555632739789745024, guid: 4750728aa6c5b614f8913d569c30a4e8,
         type: 3}
       propertyPath: m_RootOrder

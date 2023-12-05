@@ -266,7 +266,13 @@ public class Charactor : MonoBehaviorObj
             }
             if (status.currentHP <= 0)
             {
+                Debug.Log("Die");
                 DieObject();
+                if (gameObject.tag == "Player")
+                {
+                    Debug.Log("Die Player");
+                    GameManager.Instance.gameEnd();
+                }
             }
         }
     }
@@ -295,8 +301,10 @@ public class Charactor : MonoBehaviorObj
     // When object die function
     public virtual void DieObject()
     {
+        GetComponent<Rigidbody2D>().simulated = false;
         changeState(new DieState());
     }
+
     // Item Add in Inventory[index]
     public bool ItemAdd(Item item, int index = -1)
     {

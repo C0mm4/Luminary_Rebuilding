@@ -61,6 +61,12 @@ public class Player : Charactor
         base.DieObject();
     }
 
+    public void OnDestroy()
+    {
+        DieObject();
+
+    }
+
     public override void Update()
     {
         charactorSpeed = Vector2.zero;

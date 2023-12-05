@@ -13,8 +13,7 @@ public class DownFall : MonoBehaviour
         {
             if (!isFallEnd)
             {
-                Vector3 trans = transform.position;
-                transform.position = new Vector3(trans.x, trans.y, 0);
+                transform.position = originPos;
                 GetComponent<Rigidbody2D>().simulated = true;
                 isFallEnd = true;
 
@@ -30,6 +29,7 @@ public class DownFall : MonoBehaviour
 
     private void Start()
     {
+        originPos = transform.position;
         GetComponent<Rigidbody2D>().simulated = false;
         transform.position += new Vector3(0f, 22f, -22f);
         isFallEnd = false;
