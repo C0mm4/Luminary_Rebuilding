@@ -14,7 +14,7 @@ public class Burnning : Buff
 
         cooltime = 10f;
 
-        this.dmg = (int)Math.Floor(1 + (0.1 * dmg));
+        this.dmg = (int)Math.Floor(1 + (0.1 * dmg)) * (100 + tar.GetComponent<Player>().status.burnningDMG) / 100;
         startEffect();
     }
 

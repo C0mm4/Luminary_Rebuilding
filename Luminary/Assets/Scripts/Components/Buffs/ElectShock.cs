@@ -12,7 +12,7 @@ public class ElectShock : Buff
 
         cooltime = 10f;
 
-        this.dmg = 5;
+        this.dmg = 5 * (100 + tar.GetComponent<Player>().status.electShockDMG) / 100; 
         startEffect();
     }
 

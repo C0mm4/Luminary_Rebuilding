@@ -12,6 +12,7 @@ public class PillarPatturn : Patturn
 
     public override void Update()
     {
+        base.Update();
         if (!isActivate && issetData)
         {
             isActivate = true;

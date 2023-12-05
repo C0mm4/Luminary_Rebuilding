@@ -12,7 +12,7 @@ public class Seed : Buff
         setTickTime(0);
 
         cooltime = 20;
-        this.dmg = 1;
+        this.dmg = 1 * (100 + tar.GetComponent<Player>().status.seedDMG) / 100; ;
 
         startEffect();
     }

@@ -12,7 +12,7 @@ public class Melting : Buff
 
         cooltime = 10f;
 
-        this.dmg = 30 + (5 * dmg);
+        this.dmg = 30 + (5 * dmg) * (100 + tar.GetComponent<Player>().status.meltingDMG) / 100; ;
         startEffect();
     }
 

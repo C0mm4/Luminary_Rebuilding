@@ -18,7 +18,7 @@ public class MobAttack : MonoBehaviorObj
     {
         if(isSet)
         {
-            if(shooter != null)
+            if(shooter == null)
             {
                 GameManager.Resource.Destroy(gameObject);
             }

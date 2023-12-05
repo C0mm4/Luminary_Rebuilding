@@ -9,6 +9,7 @@ public class SlimePatturn4 : Patturn
     public int pillarsN = -1;
     public override void Update()
     {
+        base.Update();
         if (issetData)
         {
             if (!isRoomDataSet)

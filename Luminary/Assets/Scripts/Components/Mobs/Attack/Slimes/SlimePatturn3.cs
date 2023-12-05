@@ -7,6 +7,7 @@ public class SlimePatturn3 : Patturn
     public Vector3 dir;
     public override void Update()
     {
+        base.Update();
         dir = GameManager.player.transform.position - mob.transform.position;
         mob.GetComponent<Rigidbody2D>().velocity = dir * 3;
         StartCoroutine(Action());

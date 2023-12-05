@@ -10,7 +10,7 @@ public class Cracked : Buff
         setDurate(3f);
         setTickTime(0f);
 
-        this.dmg = 1;
+        this.dmg = 1 * (100 + tar.GetComponent<Player>().status.crackedDMG) / 100;
 
         target.calcStatus();
         startEffect();

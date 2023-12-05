@@ -12,7 +12,7 @@ public class Discharge : Buff
 
         cooltime = 15f;
 
-        dmg = target.status.maxHP / 20;
+        dmg = target.status.maxHP / 20 * (100 + tar.GetComponent<Player>().status.dischargeDMG) / 100;
 
         startEffect();
     }

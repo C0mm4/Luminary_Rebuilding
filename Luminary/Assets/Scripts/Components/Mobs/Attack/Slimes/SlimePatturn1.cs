@@ -12,6 +12,7 @@ public class SlimePatturn1 : Patturn
 
     public override void Update()
     {
+        base.Update();
         if (!isActivate && issetData)
         {
             isActivate = true;

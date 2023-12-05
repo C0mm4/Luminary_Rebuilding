@@ -15,7 +15,13 @@ public abstract class Patturn : MonoBehaviour
     }
 
     // Update is called once per frame
-    public abstract void Update();
+    public virtual void Update()
+    {
+        if(mob.gameObject == null)
+        {
+            GameManager.Resource.Destroy(gameObject);
+        }
+    }
         
     public void setData(Mob mob)
     {

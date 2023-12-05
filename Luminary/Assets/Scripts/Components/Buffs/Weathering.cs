@@ -12,7 +12,7 @@ public class Weathering : Buff
 
         cooltime = 15f;
 
-        dmg = 1;
+        dmg = 1 * (100 + tar.GetComponent<Player>().status.weatheringDMG) / 100; ;
         startEffect();
     }
 

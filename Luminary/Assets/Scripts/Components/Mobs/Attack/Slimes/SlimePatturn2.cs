@@ -11,6 +11,7 @@ public class SlimePatturn2 : Patturn
     List<Transform> pos;
     public override void Update()
     {
+        base.Update();
         if (issetData)
         {
             if (!isRoomDataSet)

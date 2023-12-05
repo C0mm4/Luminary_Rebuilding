@@ -23,4 +23,8 @@ public class Death : Projectile
         new Sentence(target.GetComponent<Charactor>(), player.GetComponent<Charactor>(), dmg);
     }
 
+    public override void setDMG()
+    {
+        dmg = ((data.damage + intpower * player.GetComponent<Player>().status.Intellect) * player.GetComponent<Player>().status.finalDMG);
+    }
 }

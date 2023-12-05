@@ -13,7 +13,7 @@ public class Fire : Buff
 
         cooltime = 10f;
 
-        dmg = 3 * dmg;
+        this.dmg = 3 * dmg * (100 + tar.GetComponent<Player>().status.fireDMG) / 100; ;
         startEffect();
     }
 

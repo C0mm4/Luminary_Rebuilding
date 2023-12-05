@@ -12,7 +12,7 @@ public class Boost : Buff
 
         cooltime = 20;
 
-        this.dmg = (int)Mathf.Floor(target.status.maxHP / 5);
+        this.dmg = (int)Mathf.Floor(target.status.maxHP / 5) * (100 + tar.GetComponent<Player>().status.boostDMG) / 100;
 
         startEffect();
     }

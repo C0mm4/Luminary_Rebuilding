@@ -13,7 +13,7 @@ public class Flow : Buff
 
         cooltime = 5f;
 
-        this.dmg = 1;
+        this.dmg = 1 * (100 + tar.GetComponent<Player>().status.flowDMG) / 100; ;
         startEffect();
     }
 

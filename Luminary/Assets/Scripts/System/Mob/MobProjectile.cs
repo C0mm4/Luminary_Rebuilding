@@ -22,6 +22,10 @@ public class MobProjectile : MobAttack
     // Update is called once per frame
     void Update()
     {
+        if (shooter == null)
+        {
+            GameManager.Resource.Destroy(gameObject);
+        }
         if (isThrow)
         {
             if (!trajectory)

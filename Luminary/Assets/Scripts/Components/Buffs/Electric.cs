@@ -13,7 +13,7 @@ public class Electric : Buff
 
         cooltime = 10f;
 
-        this.dmg = 1;
+        this.dmg = 1 * (100 + tar.GetComponent<Player>().status.electDMG) / 100;
         startEffect();
     }
 

@@ -12,7 +12,7 @@ public class Overloading : Buff
 
         cooltime = 10f;
 
-        this.dmg = 2;
+        this.dmg = 2 * (100 + tar.GetComponent<Player>().status.overloadDMG) / 100; ;
 
         startEffect();
     }
