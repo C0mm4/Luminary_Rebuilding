@@ -211,7 +211,12 @@ MonoBehaviour:
   isClear: 0
   isActivate: 0
   mobCount: 0
-  spawnTrans: []
+  spawnTrans:
+  - {fileID: 753416919278386910}
+  - {fileID: 1626407476295698809}
+  - {fileID: 891275177098497086}
+  - {fileID: 4005404106627338912}
+  - {fileID: 7329112241443769860}
 --- !u!61 &8562286733375323169
 BoxCollider2D:
   m_ObjectHideFlags: 0
