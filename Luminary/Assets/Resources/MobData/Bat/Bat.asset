@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   index: 0
-  baseHP: 100
+  baseHP: 60
   baseDMG: 1
   basespeed: 4
   runRange: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Goblin_Magition
   m_EditorClassIdentifier: 
   index: 0
-  baseHP: 120
+  baseHP: 90
   baseDMG: 1
   basespeed: 6
   runRange: 4

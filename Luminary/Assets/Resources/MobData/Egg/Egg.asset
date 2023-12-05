@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Egg
   m_EditorClassIdentifier: 
   index: 0
-  baseHP: 135
+  baseHP: 65
   baseDMG: 1
   basespeed: 0
   runRange: 0
