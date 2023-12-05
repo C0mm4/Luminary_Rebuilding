@@ -10,7 +10,7 @@
 		<xRange>6</xRange>
 		<yRange>4</yRange>
 		<durateT>1</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>7</spd>
                 <elements>1</elements>
                 <path>Spell/Fire/SpellFire</path>
@@ -27,7 +27,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1</castTime>
+		<castTime>0.3</castTime>
 		<spd>14</spd>
                 <elements>1</elements>
                 <path>Spell/Fire/SpellFireBall</path>
@@ -44,7 +44,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>14</spd>
                 <elements>1</elements>
                 <path>Spell/Fire/SpellFireWall</path>
@@ -61,7 +61,7 @@
 		<xRange>12</xRange>
 		<yRange>8</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>15.75</spd>
                 <elements>1</elements>
                 <path>Spell/Fire/SpellFireBolt</path>
@@ -78,7 +78,7 @@
 		<xRange>15</xRange>
 		<yRange>10</yRange>
 		<durateT>5</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>12</spd>
                 <elements>1</elements>
 		<path>Spell/Fire/SpellMagmaField</path>
@@ -95,7 +95,7 @@
 		<xRange>18</xRange>
 		<yRange>12</yRange>
 		<durateT>3</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>31.5</spd>
                 <elements>1</elements>
 		<path>Spell/Fire/SpellFlameStrike</path>
@@ -129,7 +129,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>5</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>20</spd>
                 <elements>1</elements>
 		<path>Spell/Fire/SpellMeteor</path>
@@ -146,7 +146,7 @@
 		<xRange>6</xRange>
 		<yRange>4</yRange>
 		<durateT>2</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>7</spd>
                 <elements>2</elements>
 		<path>Spell/Ice/SpellIce</path>
@@ -163,7 +163,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>3</durateT>
-		<castTime>1</castTime>
+		<castTime>0.3</castTime>
 		<spd>14</spd>
                 <elements>2</elements>
                 <path>Spell/Ice/SpellIceSpear</path>
@@ -180,7 +180,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>14</spd>
                 <elements>2</elements>
 		<path>Spell/Ice/SpellFrostNova</path>
@@ -197,7 +197,7 @@
 		<xRange>12</xRange>
 		<yRange>8</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>15.75</spd>
                 <elements>2</elements>
 		<path>Spell/Ice/SpellFrozenOrb</path>
@@ -214,7 +214,7 @@
 		<xRange>15</xRange>
 		<yRange>10</yRange>
 		<durateT>5</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>12</spd>
                 <elements>2</elements>
 		<path>Spell/Ice/SpellIceAge</path>
@@ -231,7 +231,7 @@
 		<xRange>18</xRange>
 		<yRange>12</yRange>
 		<durateT>5</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>31.5</spd>
                 <elements>2</elements>
 		<path>Spell/Ice/SpellIceCrystal</path>
@@ -248,7 +248,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>5</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>15</spd>
                 <elements>2</elements>
 		<path>Spell/Ice/SpellBlizzard</path>
@@ -265,7 +265,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>10</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>20</spd>
                 <elements>2</elements>
 		<path>Spell/Ice/SpellGlacial</path>
@@ -282,7 +282,7 @@
 		<xRange>6</xRange>
 		<yRange>4</yRange>
 		<durateT>2</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>7</spd>
                 <elements>3</elements>
 		<path>Spell/Wind/SpellWind</path>
@@ -299,7 +299,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>3</durateT>
-		<castTime>1</castTime>
+		<castTime>0.3</castTime>
 		<spd>14</spd>
                 <elements>3</elements>
 		<path>Spell/Wind/SpellWindArrow</path>
@@ -316,7 +316,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>14</spd>
                 <elements>3</elements>
 		<path>Spell/Wind/SpellWindCutter</path>
@@ -333,7 +333,7 @@
 		<xRange>12</xRange>
 		<yRange>8</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>15.75</spd>
                 <elements>3</elements>
 		<path>Spell/Wind/SpellWindScrew</path>
@@ -350,7 +350,7 @@
 		<xRange>15</xRange>
 		<yRange>10</yRange>
 		<durateT>3</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>12</spd>
                 <elements>3</elements>
 		<path>Spell/Wind/SpellWindHawk</path>
@@ -367,7 +367,7 @@
 		<xRange>18</xRange>
 		<yRange>12</yRange>
 		<durateT>8</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>31.5</spd>
                 <elements>3</elements>
 		<path>Spell/Wind/SpellWindField</path>
@@ -384,7 +384,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>10</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>15</spd>
                 <elements>3</elements>
 		<path>Spell/Wind/SpellTornado</path>
@@ -401,7 +401,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>15</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>20</spd>
                 <elements>3</elements>
 		<path>Spell/Wind/SpellHurricane</path>
@@ -418,7 +418,7 @@
 		<xRange>6</xRange>
 		<yRange>4</yRange>
 		<durateT>2</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>7</spd>
                 <elements>4</elements>
 		<path>Spell/Rock/SpellRock</path>
@@ -435,7 +435,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>3</durateT>
-		<castTime>1</castTime>
+		<castTime>0.3</castTime>
 		<spd>14</spd>
                 <elements>4</elements>
 		<path>Spell/Rock/SpellStoneShower</path>
@@ -452,7 +452,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>14</spd>
                 <elements>4</elements>
 		<path>Spell/Rock/SpellStoneHand</path>
@@ -469,7 +469,7 @@
 		<xRange>12</xRange>
 		<yRange>8</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>15.75</spd>
                 <elements>4</elements>
 		<path>Spell/Rock/SpellRockBullet</path>
@@ -486,7 +486,7 @@
 		<xRange>15</xRange>
 		<yRange>10</yRange>
 		<durateT>3</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>12</spd>
                 <elements>4</elements>
 		<path>Spell/Rock/SpellShockWave</path>
@@ -503,7 +503,7 @@
 		<xRange>18</xRange>
 		<yRange>12</yRange>
 		<durateT>3</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>31.5</spd>
                 <elements>4</elements>
 		<path>Spell/Rock/SpellStoneFist</path>
@@ -520,7 +520,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>5</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>15</spd>
                 <elements>4</elements>
 		<path>Spell/Rock/SpellEarthQuake</path>
@@ -537,7 +537,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>3</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>20</spd>
                 <elements>4</elements>
 		<path>Spell/Rock/SpellTitanHand</path>
@@ -606,7 +606,7 @@
 		<xRange>8</xRange>
 		<yRange>8</yRange>
 		<durateT>1</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>0</spd>
                 <elements>0</elements>
 		<path>Spell/None/SpellTeleport</path>
@@ -623,7 +623,7 @@
 		<xRange>6</xRange>
 		<yRange>4</yRange>
 		<durateT>1</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>7</spd>
                 <elements>5</elements>
 		<path>Spell/Lightning/SpellLightning</path>
@@ -640,7 +640,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1</castTime>
+		<castTime>0.3</castTime>
 		<spd>14</spd>
                 <elements>5</elements>
 		<path>Spell/Lightning/SpellLightningBall</path>
@@ -657,7 +657,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>14</spd>
                 <elements>5</elements>
 		<path>Spell/Lightning/SpellLightingSpear</path>
@@ -674,7 +674,7 @@
 		<xRange>12</xRange>
 		<yRange>8</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>15.75</spd>
                 <elements>5</elements>
 		<path>Spell/Lightning/SpellLightningShock</path>
@@ -691,7 +691,7 @@
 		<xRange>15</xRange>
 		<yRange>10</yRange>
 		<durateT>1</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>12</spd>
                 <elements>5</elements>
 		<path>Spell/Lightning/SpellLightingStrike</path>
@@ -708,7 +708,7 @@
 		<xRange>18</xRange>
 		<yRange>12</yRange>
 		<durateT>3</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>31.5</spd>
                 <elements>5</elements>
 		<path>Spell/Lightning/SpellChainLightning</path>
@@ -725,7 +725,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>1</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>15</spd>
                 <elements>5</elements>
 		<path>Spell/Lightning/SpellWrathOfGod</path>
@@ -742,7 +742,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>5</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>20</spd>
                 <elements>5</elements>
 		<path>Spell/Lightning/SpellThunderCloud</path>
@@ -759,7 +759,7 @@
 		<xRange>6</xRange>
 		<yRange>4</yRange>
 		<durateT>1</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>7</spd>
                 <elements>6</elements>
 		<path>Spell/Nature/SpellNature</path>
@@ -776,7 +776,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1</castTime>
+		<castTime>0.3</castTime>
 		<spd>14</spd>
                 <elements>6</elements>
 		<path>Spell/Nature/SpellRoot</path>
@@ -793,7 +793,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>14</spd>
                 <elements>6</elements>
 		<path>Spell/Nature/SpellTrunk</path>
@@ -810,7 +810,7 @@
 		<xRange>12</xRange>
 		<yRange>8</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>15.75</spd>
                 <elements>6</elements>
 		<path>Spell/Nature/SpellGroot</path>
@@ -827,7 +827,7 @@
 		<xRange>15</xRange>
 		<yRange>10</yRange>
 		<durateT>1</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>12</spd>
 		<elements>6</elements>
 		<path>Spell/Nature/SpellVine</path>
@@ -844,7 +844,7 @@
 		<xRange>18</xRange>
 		<yRange>12</yRange>
 		<durateT>3</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>31.5</spd>
 		<elements>6</elements>
 		<path>Spell/Nature/SpellEntangle</path>
@@ -861,7 +861,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>1</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>15</spd>
 		<elements>6</elements>
 		<path>Spell/Nature/SpellNaturalize</path>
@@ -878,7 +878,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>5</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>20</spd>
 		<elements>6</elements>
 		<path>Spell/Nature/SpellGardenOfPain</path>
@@ -895,7 +895,7 @@
 		<xRange>6</xRange>
 		<yRange>4</yRange>
 		<durateT>1</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>7</spd>
 		<elements>7</elements>
 		<path>Spell/Death/SpellDeath</path>
@@ -912,7 +912,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1</castTime>
+		<castTime>0.3</castTime>
 		<spd>14</spd>
 		<elements>7</elements>
 		<path>Spell/Death/SpellDeathball</path>
@@ -929,7 +929,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>14</spd>
 		<elements>7</elements>
 		<path>Spell/Death/SpellFingerOfDeath</path>
@@ -946,7 +946,7 @@
 		<xRange>12</xRange>
 		<yRange>8</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>15.75</spd>
 		<elements>7</elements>
 		<path>Spell/Death/SpellDeathCloud</path>
@@ -963,7 +963,7 @@
 		<xRange>15</xRange>
 		<yRange>10</yRange>
 		<durateT>1</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>12</spd>
 		<elements>7</elements>
 		<path>Spell/Death/SpellDeathSentence</path>
@@ -980,7 +980,7 @@
 		<xRange>18</xRange>
 		<yRange>12</yRange>
 		<durateT>5</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>31.5</spd>
 		<elements>7</elements>
 		<path>Spell/Death/SpellDeathField</path>
@@ -997,7 +997,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>1</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>15</spd>
 		<elements>7</elements>
 		<path>Spell/Death/SpellReaper</path>
@@ -1014,7 +1014,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>1</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>20</spd>
 		<elements>7</elements>
 		<path>Spell/Death/SpellTheDeath</path>
@@ -1031,7 +1031,7 @@
 		<xRange>6</xRange>
 		<yRange>4</yRange>
 		<durateT>1</durateT>
-		<castTime>0.5</castTime>
+		<castTime>0.1</castTime>
 		<spd>7</spd>
 		<elements>8</elements>
 		<path>Spell/Holy/SpellHoly</path>
@@ -1048,7 +1048,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1</castTime>
+		<castTime>0.3</castTime>
 		<spd>14</spd>
 		<elements>8</elements>
 		<path>Spell/Holy/SpellHolycross</path>
@@ -1065,7 +1065,7 @@
 		<xRange>8</xRange>
 		<yRange>6</yRange>
 		<durateT>1</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>14</spd>
 		<elements>8</elements>
 		<path>Spell/Holy/SpellSaintHammer</path>
@@ -1082,7 +1082,7 @@
 		<xRange>12</xRange>
 		<yRange>8</yRange>
 		<durateT>3</durateT>
-		<castTime>1.5</castTime>
+		<castTime>0.5</castTime>
 		<spd>15.75</spd>
 		<elements>8</elements>
 		<path>Spell/Holy/SpellOstensorium</path>
@@ -1099,7 +1099,7 @@
 		<xRange>15</xRange>
 		<yRange>10</yRange>
 		<durateT>1</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>12</spd>
 		<elements>8</elements>
 		<path>Spell/Holy/SpellSanctuary</path>
@@ -1117,7 +1117,7 @@
 		<xRange>18</xRange>
 		<yRange>12</yRange>
 		<durateT>5</durateT>
-		<castTime>2</castTime>
+		<castTime>0.75</castTime>
 		<spd>31.5</spd>
 		<elements>8</elements>
 		<path>Spell/Holy/SpellPunishment</path>
@@ -1134,7 +1134,7 @@
 		<xRange>30</xRange>
 		<yRange>20</yRange>
 		<durateT>1</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>15</spd>
 		<elements>8</elements>
 		<path>Spell/Holy/SpellHeavensGate</path>
@@ -1151,7 +1151,7 @@
 		<xRange>21</xRange>
 		<yRange>14</yRange>
 		<durateT>1</durateT>
-		<castTime>2.5</castTime>
+		<castTime>1</castTime>
 		<spd>20</spd>
 		<elements>8</elements>
 		<path>Spell/Holy/SpellJudgement</path>
