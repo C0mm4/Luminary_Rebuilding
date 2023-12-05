@@ -265,12 +265,6 @@ public class GameManager : MonoBehaviour
         uiManager.ChangeState(UIState.Lobby);
         gameState = GameState.InPlay;
 
-        Item item = itemDataManager.ItemGen(10003001);
-        player.GetComponent<Player>().Equip(0, item);
-        item = itemDataManager.ItemGen(10003001);
-        player.GetComponent<Player>().Equip(1, item);
-        Resource.Instantiate("Mobs/Slime/SlimeBoss", new Vector3(4f, 4f, 0f));
-        StageC.rooms.Add(GameObject.Find("BossRoom").GetComponent<DunRoom>());
         StageC.currentRoom = 0;
     }
 

@@ -55,7 +55,7 @@ public class DunRoom : MonoBehaviour
     }
 
     // When Start Room, Mob Spawns 1 seconds, and activate 1 seconds
-    IEnumerator MobSpawn()
+    public virtual IEnumerator MobSpawn()
     {
         yield return new WaitForSeconds(1f);
         List<GameObject> gos = new List<GameObject>();

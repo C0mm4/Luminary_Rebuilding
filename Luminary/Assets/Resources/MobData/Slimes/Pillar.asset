@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pillar
   m_EditorClassIdentifier: 
   index: 0
-  baseHP: 300
+  baseHP: 30
   baseDMG: 0
   basespeed: 0
   runRange: 0

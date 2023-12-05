@@ -40,4 +40,12 @@ public class MobSpawnner : MonoBehaviour
             return null;
         }
     }
+
+    public GameObject bossSpawn(GameObject obj, Transform transform, Transform parent = null)
+    {
+        GameObject go;
+        go = GameManager.Resource.Instantiate(obj);
+        go.transform.position = transform.position;
+        return go;
+    }
 }

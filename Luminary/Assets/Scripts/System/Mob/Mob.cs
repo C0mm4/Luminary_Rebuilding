@@ -45,6 +45,7 @@ public class Mob : Charactor
         spawnActive = false;
     }
 
+
     // AI Generate by string name
     public void AIGen()
     {

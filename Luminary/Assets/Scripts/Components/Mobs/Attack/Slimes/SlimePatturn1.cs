@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class SlimePatturn1 : Patturn
 {
+    public override IEnumerator Action()
+    {
+        yield return 0;
+    }
+
     public override void Update()
     {
         if (!isActivate && issetData)
@@ -16,7 +21,6 @@ public class SlimePatturn1 : Patturn
                 go.GetComponent<Danmaku>().setData(mob);
                 float degrees = Mathf.Repeat(i, 360f);
                 float radianAngle = Mathf.Deg2Rad * degrees;
-                Debug.Log(radianAngle);
                 Vector3 dir = new Vector3(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
                 dir.Normalize();
                 go.GetComponent<Danmaku>().setTrans(dir.x, dir.y, 0, 5f);

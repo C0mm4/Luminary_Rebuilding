@@ -28,7 +28,7 @@ public class SlimePatturn2 : Patturn
         }
     }
 
-    public IEnumerator Action()
+    public override IEnumerator Action()
     {
         yield return new WaitForSeconds(1f);
         jellys = new List<GameObject>();
@@ -50,7 +50,6 @@ public class SlimePatturn2 : Patturn
                 }
                 go.transform.position = new Vector3(rX, rY, 0);
                 go.transform.localScale = new Vector2(0.5f, 0.5f);
-                go2.transform.position = go.transform.position + new Vector3(0, 22, -22);
                 go2.GetComponent<Rain>().shadow = go.GetComponent<RainShadow>();
                 go2.GetComponent<MobAttack>().setData(mob);
                 shadows.Add(go);

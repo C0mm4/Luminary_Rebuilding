@@ -55,7 +55,7 @@ public class SlimePatturn4 : Patturn
         }
     }
 
-    public IEnumerator Action()
+    public override IEnumerator Action()
     {
         yield return new WaitForSeconds(1f);
 
@@ -69,15 +69,31 @@ public class SlimePatturn4 : Patturn
         GameManager.Resource.Destroy(go);
 
         pillars = new List<GameObject>();
+        List<GameObject> shadows = new List<GameObject>();
         transform.position = mob.transform.position;
         for(int i = 0; i < 4; i++)
         {
+            // Pillar Shadow Object Gen
+            go = GameManager.Resource.Instantiate("Mobs/Shadows", mob.transform.position);
+            go.transform.position = GameManager.StageC.rooms[GameManager.StageC.currentRoom].transform.position + new Vector3(Func.xXpos[i] * 5.25f, Func.yXpos[i] * 4f + -2);
+            shadows.Add(go);
+
+            // Pillar Object Gen
             go = GameManager.Resource.Instantiate("Mobs/Slime/AttackPrefabs/Pillar", transform);
             go.transform.position = GameManager.StageC.rooms[GameManager.StageC.currentRoom].transform.position + new Vector3(Func.xXpos[i] * 5.25f, Func.yXpos[i] * 4f + -2);
+            Debug.Log(go.transform.position);
             pillars.Add(go);
             go.GetComponent<Mob>().spawnActive = true;
             GameManager.StageC.rooms[GameManager.StageC.currentRoom].mobCount++;
         }
+
+        yield return new WaitForSeconds(3f);
+        foreach(GameObject shadow in shadows)
+        {
+            GameManager.Resource.Destroy(shadow);
+        }
+
+        shadows.Clear();
 
         pillarsN = 4;
 

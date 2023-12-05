@@ -146,7 +146,7 @@ MonoBehaviour:
   - {fileID: 3746470321537261040, guid: 072bd378d43635f429e2cbbdef514c7d, type: 3}
   - {fileID: 3746470321537261040, guid: 339368e0ba12ea8468851a00bd024eee, type: 3}
   - {fileID: 3746470321537261040, guid: 393903f90ad368b4fb1e540c8a44272d, type: 3}
-  isHitbox: 00000100
+  isHitbox: 00000000
   data: {fileID: 11400000, guid: b829dd545330c8d4e88eb7bfb4a41e91, type: 2}
   lastAttackT: []
   AtkObj:

@@ -7,16 +7,19 @@ public class SlimePillar : AIModel
     public bool isSet = false;
     public override void Update()
     {
-        if (isSet)
+        if (target.GetComponent<DownFall>().isFallEnd)
         {
-            if(Time.time - target.lastAttackT[0] >= 3f)
+            if (isSet)
             {
-                target.changeState(new MobCastState(1f, 0));
+                if (Time.time - target.lastAttackT[0] >= 3f)
+                {
+                    target.changeState(new MobCastState(1f, 0));
+                }
             }
-        }
-        else
-        {
-            timeSet();
+            else
+            {
+                timeSet();
+            }
         }
     }
 

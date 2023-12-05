@@ -11,6 +11,7 @@ public abstract class Patturn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isActivate = false;
     }
 
     // Update is called once per frame
@@ -21,4 +22,6 @@ public abstract class Patturn : MonoBehaviour
         this.mob = mob;
         issetData = true;
     }
+
+    public abstract IEnumerator Action();
 }
