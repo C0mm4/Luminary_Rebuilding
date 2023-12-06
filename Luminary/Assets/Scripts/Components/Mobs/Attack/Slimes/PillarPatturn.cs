@@ -28,7 +28,7 @@ public class PillarPatturn : Patturn
                 dir.Normalize();
                 go.GetComponent<Danmaku>().setTrans(dDir.x, dDir.y, 0, 3f, 0.25f);
             }
-            mob.status.currentHP += 30;
+            mob.HPIncrease(30);
             mob.setIdleState();
             GameManager.Resource.Destroy(gameObject);
         }

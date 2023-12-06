@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SlimeBoss
   m_EditorClassIdentifier: 
   index: 0
-  baseHP: 10
+  baseHP: 1500
   baseDMG: 2
   basespeed: 2
   runRange: 0

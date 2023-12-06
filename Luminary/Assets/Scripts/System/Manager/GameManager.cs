@@ -270,7 +270,6 @@ public class GameManager : MonoBehaviour
         uiManager.ChangeState(UIState.Lobby);
         gameState = GameState.InPlay;
 
-        Resource.Instantiate("Dungeon/Door/BossDoor", new Vector3(2f, -2f));
     }
 
     // Stage Scene Initialize

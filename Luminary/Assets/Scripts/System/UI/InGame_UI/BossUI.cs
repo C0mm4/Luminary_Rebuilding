@@ -56,7 +56,14 @@ public class BossUI : MonoBehaviorObj
     {
         targetCurrentHP = boss.status.currentHP;
         HP.fillAmount = (float)((float)boss.status.currentHP / (float)boss.status.maxHP);
-
+        if (!yellowbarRunning)
+        {
+            if(yellowBar <= targetCurrentHP)
+            {
+                yellowBar = targetCurrentHP;
+                HPBar.fillAmount = (float)((float)yellowBar / (float)boss.status.maxHP);
+            }
+        }
     }
 
     public IEnumerator SetYellowBar(int targetYellowBar)
