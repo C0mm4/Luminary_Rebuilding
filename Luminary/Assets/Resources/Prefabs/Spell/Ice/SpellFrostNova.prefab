@@ -115,7 +115,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -133,3 +133,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09316cc1a0f1f4f449c2cc2f41ad171d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  spawnTime: 0
+  currentTime: 0
+  deltaTime: 0
+  spawnPos: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
+  target: {fileID: 0}
+  mos: {x: 0, y: 0, z: 0}
+  pos: {x: 0, y: 0, z: 0}
+  dmg: 0
+  isGen: 0
+  intpower: 0
+  speed: 0
+  TickTime: 1

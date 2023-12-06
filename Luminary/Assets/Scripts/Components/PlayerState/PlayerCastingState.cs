@@ -33,6 +33,11 @@ public class PlayerCastingState : State
         charactor.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         GameManager.Instance.uiManager.stableUI.GetComponent<StableUI>().isCast = true;
         GameManager.Instance.uiManager.stableUI.GetComponent<StableUI>().setCast(castingT, startT);
+
+        charactor.GetComponent<Charactor>().sawDir.x = Vector2.Dot(mos - charactor.transform.position, new Vector2(1, 0));
+
+        // Spell Sound Play
+        GameManager.soundManager.playAttackSound();
     }
 
     public override void UpdateState()

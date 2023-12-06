@@ -82,7 +82,8 @@ public class StateMachine
     // exit currentstate
     public void exitState()
     {
-        currentState.ExitState();
+        if(currentState != null)
+            currentState.ExitState();
         if (stateStack.Count > 0)
         {
             currentState = stateStack.Pop();

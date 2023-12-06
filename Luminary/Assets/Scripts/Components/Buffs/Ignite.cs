@@ -14,7 +14,7 @@ public class Ignite : Buff
 
         cooltime = 5f;
 
-        this.dmg = (int)Math.Floor(1 + (0.1f * dmg)) * (100 + tar.GetComponent<Player>().status.igniteDMG) / 100; ;
+        this.dmg = (int)Math.Floor(1 + (0.1f * dmg)) * (100 + attacker.GetComponent<Player>().status.igniteDMG) / 100; ;
 
         startEffect();
     }

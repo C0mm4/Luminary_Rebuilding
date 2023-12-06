@@ -45,7 +45,9 @@ public class MobRunState : State
             }
 
             pastPos = charactor.transform.position;
-            charactor.GetComponent<Rigidbody2D>().velocity = dir * charactor.status.speed;
+            //            charactor.GetComponent<Rigidbody2D>().velocity = dir * charactor.status.speed;
+            charactor.transform.position += dir * charactor.status.speed * Time.deltaTime;
+            Debug.Log(dir);
             charactor.GetComponent<Charactor>().sawDir.x = Vector2.Dot(charactor.GetComponent<Charactor>().charactorSpeed, new Vector2(1, 0));
         }
     }

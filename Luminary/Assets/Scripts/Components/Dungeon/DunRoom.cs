@@ -106,7 +106,7 @@ public class DunRoom : MonoBehaviour
     }
 
     // When Clear Room Open Door
-    public void OpenDoor()
+    public virtual void OpenDoor()
     {
         foreach(GameObject gate in DoorObjs)
         {

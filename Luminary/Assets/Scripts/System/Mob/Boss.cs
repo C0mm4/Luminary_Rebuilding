@@ -54,8 +54,16 @@ public class Boss : Mob
 
     public override void DieObject()
     {
+        DunRoom currentRoom = GameManager.StageC.rooms[GameManager.StageC.currentRoom];
+        GameObject go = GameManager.Resource.Instantiate("Dungeon/Portal/EndPortal", currentRoom.gameObject.transform.position);
+        go.transform.position = currentRoom.transform.position;
+        
         base.DieObject();
+    }
 
+    public void OnDestroy()
+    {
+        GameManager.Resource.Destroy(GameObject.Find("BossUI (Clone)"));
     }
 
     public IEnumerator spawnSceneEndTrigger()

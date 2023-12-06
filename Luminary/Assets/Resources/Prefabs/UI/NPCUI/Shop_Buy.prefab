@@ -9863,6 +9863,7 @@ MonoBehaviour:
   menusize: 0
   currentMenu: 0
   closeButton: {fileID: 6529232755248468456}
+  confirmButton: {fileID: 306209225118600371}
   slots:
   - {fileID: 2221940986750812432}
   - {fileID: 1232601397426429003}
@@ -9890,7 +9891,6 @@ MonoBehaviour:
   - {fileID: 4550108885810510797}
   npc: {fileID: 0}
   player: {fileID: 0}
-  confirmButton: {fileID: 306209225118600371}
   curGold: {fileID: 8632522199460528821}
   tmpIndex: 0
   selectIndex: 0
@@ -11252,7 +11252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4afd6630696db2a409f7b56938d687c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9719bdd760cdda46b9c97cef5aed227, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

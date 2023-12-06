@@ -84,8 +84,12 @@ public class Player : Charactor
         {
             if (PlayerDataManager.interactionObject != null)
             {
-                interactionTrriger = PlayerDataManager.interactionObject.GetComponent<InteractionTrriger>();
-                interactionTrriger.isInteraction();
+                if(GameManager.uiState == UIState.InPlay || GameManager.uiState == UIState.Lobby)
+                {
+                    interactionTrriger = PlayerDataManager.interactionObject.GetComponent<InteractionTrriger>();
+                    interactionTrriger.isInteraction();
+
+                }
             }
         }
 
@@ -162,13 +166,22 @@ public class Player : Charactor
             // Mouse left click casting spells
             if (Input.GetMouseButtonDown(0))
             {
-                if (currentSpell.isSet())
+                if (skillslots[1].isSet())
                 {
-                    currentSpell.useSkill();
-                    Debug.Log("attackSound.Play");
-                    GameManager.soundManager.playAttackSound();
+                    skillslots[1].useSkill();
                 }
             }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (skillslots[2].isSet())
+                {
+                    skillslots[2].useSkill();
+                }
+            }
+
+
+/*
             // Q button is Weapon Slot Change
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -182,7 +195,7 @@ public class Player : Charactor
                     currentSpellIndex = 0;
                     currentSpell = skillslots[1];
                 }
-            }
+            }*/
         }
 
     }
@@ -351,6 +364,7 @@ public class Player : Charactor
             if (ItemAdd(status.weapons[n].item))
             {
                 status.weapons[n].RemoveItem();
+                skillslots[n + 1].deSetCommand();
 //                spells[n+1].deSetCommand();
                 GameManager.Instance.uiManager.invenFresh();
             }

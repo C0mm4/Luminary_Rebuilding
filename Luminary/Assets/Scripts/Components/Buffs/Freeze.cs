@@ -13,7 +13,7 @@ public class Freeze : Buff
 
         cooltime = 5f;
 
-        this.dmg = 1 * (100 + tar.GetComponent<Player>().status.freezeDMG) / 100; ;
+        this.dmg = 1 * (100 + attacker.GetComponent<Player>().status.freezeDMG) / 100; ;
 
         startEffect();
     }

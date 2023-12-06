@@ -150,6 +150,8 @@ public class GameManager : MonoBehaviour
         init();
         soundManager.soundSetupInit(gameData.gameVolume, gameData.effectVolume, gameData.musicVolume, true);
         soundManager.playBGM();
+
+        gameState = GameState.InPlay;
     }
 
     // Start is called before the first frame update
@@ -218,11 +220,13 @@ public class GameManager : MonoBehaviour
     
     public void sceneControl(string targetScene)
     {
-        
-        gameState = GameState.Loading;
-        SceneChangeAction?.Invoke();
-        soundManager.bgmChange("InGame", 1.0f);
-        sceneTransition.sceneLoad(targetScene);
+        if(gameState != GameState.Loading)
+        {
+            gameState = GameState.Loading;
+            SceneChangeAction?.Invoke();
+            soundManager.bgmChange("InGame", 1.0f);
+            sceneTransition.sceneLoad(targetScene);
+        }
     }
 
 
@@ -266,6 +270,7 @@ public class GameManager : MonoBehaviour
         uiManager.ChangeState(UIState.Lobby);
         gameState = GameState.InPlay;
 
+        Resource.Instantiate("Dungeon/Door/BossDoor", new Vector3(2f, -2f));
     }
 
     // Stage Scene Initialize
@@ -427,7 +432,6 @@ public class GameManager : MonoBehaviour
     public void GameReset()
     {
         GameObjectReSet();
-        gameState = GameState.Loading;
         sceneControl("LobbyScene");
     }
 

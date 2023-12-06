@@ -149,8 +149,6 @@ public class Charactor : MonoBehaviorObj
             buff.target = this;
             status.buffs.Add(buff);
             buff.startEffect();
-            Debug.Log("Set Buffs");
-            Debug.Log(status.buffs.Count);
         }
     }
 
@@ -239,41 +237,51 @@ public class Charactor : MonoBehaviorObj
     // HP Decrease
     public void HPDecrease(int pts)
     {
-        if (!godmode)
+        if(status.currentHP > 0)
         {
-            if (gameObject.tag == "Player")
+            if (!godmode)
             {
-                if (!isHit)
-                {
-                    Debug.Log("Hit");
-                    isHit = true;
-                    status.currentHP -= pts;
-
-                    Invoke("reclusiveHitbox", 1f);
-                    
-                }
-            }
-            else
-            {
-                // generate Damage UI
-                double dmg = pts * (100 - status.def) / 100;
-                status.currentHP -= (int)Math.Floor(dmg);
-                GameObject go = GameManager.Resource.Instantiate("UI/DMG/DMGUI");
-                go.GetComponent<DMGUI>().text.text = dmg.ToString();
-                go.GetComponent<DMGUI>().pos.x = transform.position.x;
-                go.GetComponent<DMGUI>().pos.y = transform.position.y;
-                go.GetComponent<DMGUI>().Set();
-            }
-            if (status.currentHP <= 0)
-            {
-                Debug.Log("Die");
-                DieObject();
                 if (gameObject.tag == "Player")
                 {
-                    Debug.Log("Die Player");
-                    GameManager.Instance.gameEnd();
+                    if (!isHit)
+                    {
+                        isHit = true;
+                        status.currentHP -= pts;
+
+                        Invoke("reclusiveHitbox", 1f);
+
+                    }
+                }
+                else
+                {
+                    // generate Damage UI
+                    double dmg = pts * (100 - status.def) / 100;
+                    status.currentHP -= (int)Math.Floor(dmg);
+                    GameObject go = GameManager.Resource.Instantiate("UI/DMG/DMGUI");
+                    go.GetComponent<DMGUI>().text.text = dmg.ToString();
+                    go.GetComponent<DMGUI>().pos.x = transform.position.x;
+                    go.GetComponent<DMGUI>().pos.y = transform.position.y;
+                    go.GetComponent<DMGUI>().Set();
+                }
+                if (status.currentHP <= 0)
+                {
+                    try
+                    {
+                        if (getState().GetType().Name != "DieState")
+                            DieObject();
+
+                    }
+                    catch
+                    {
+                        DieObject();
+                    }
+                    if (gameObject.tag == "Player")
+                    {
+                        GameManager.Instance.gameEnd();
+                    }
                 }
             }
+
         }
     }
     // True Damage
@@ -321,12 +329,10 @@ public class Charactor : MonoBehaviorObj
                     }
                 }
                 GameManager.Instance.uiManager.invenFresh();
-                Debug.Log(item.data.type);
                 return true;
             }
             else
             {
-                Debug.Log("Inventory is Full");
                 GameManager.Instance.uiManager.textUI("Inventory is Full");
                 return false;
             }

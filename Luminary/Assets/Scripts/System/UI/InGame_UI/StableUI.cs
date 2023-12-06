@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -62,6 +63,8 @@ public class StableUI : MonoBehaviorObj
     [SerializeField]
     Player player;
 
+    public TMP_Text gold;
+
     RectTransform rt;
 
     public void init()
@@ -77,7 +80,7 @@ public class StableUI : MonoBehaviorObj
 
     public void Update()
     {
-        if(GameManager.gameState == GameState.InPlay)
+        if(GameManager.gameState == GameState.InPlay && GameManager.uiState == UIState.InPlay)
         {
             // Freshing HP, MP Bar
             FreshMaxHPMP();
@@ -94,7 +97,9 @@ public class StableUI : MonoBehaviorObj
             }
         }
         if(player != null)
-            WeaponSlotChange(player.currentSpellIndex);
+        {
+            gold.text = "Gold : " + player.status.gold + " G";
+        }
     }
     // Set Casting Time
     public void setCast(float castT, float startT)

@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     public Vector3 mousePos = new Vector3(), mouseWorldPos = new Vector3();
     private bool hasInput = false;
     public bool isDragging = false;
+    public float MenuCloseT;
 
     // Key Input Event Check
     public void OnUpdate()
@@ -31,15 +32,19 @@ public class InputManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameManager.gameState == GameState.Pause)
+            if (Time.time - MenuCloseT >= 1f)
             {
-                GameManager.Instance.pauseGame();
-                GameManager.Instance.uiManager.endMenu();
-            }
-            else if ((GameManager.gameState != GameState.Loading)
-                && (GameManager.uiState == UIState.InPlay || GameManager.uiState == UIState.Lobby))
-            {
-                GameManager.Instance.pauseGame();
+                if (GameManager.gameState == GameState.Pause)
+                {
+                    GameManager.Instance.pauseGame();
+                    GameManager.Instance.uiManager.endMenu();
+                }
+                else if ((GameManager.gameState != GameState.Loading)
+                    && (GameManager.uiState == UIState.InPlay || GameManager.uiState == UIState.Lobby))
+                {
+                    GameManager.Instance.pauseGame();
+                }
+
             }
         }
     }

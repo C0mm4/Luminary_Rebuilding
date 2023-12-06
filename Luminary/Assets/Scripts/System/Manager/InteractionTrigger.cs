@@ -9,20 +9,20 @@ public abstract class InteractionTrriger : MonoBehaviorObj
     [SerializeField]
     public float interactDist;
 
+    public Transform UIPosition;
+    [SerializeField]
     protected GameObject popupUI;
 
     [SerializeField]
     protected string text;
-    float width;
 
     
 
     // Update is called once per frame
     public virtual void  Update()
     {
-        if(GameManager.uiState == UIState.InPlay || GameManager.uiState == UIState.Lobby)
+        if((GameManager.uiState == UIState.InPlay || GameManager.uiState == UIState.Lobby) && GameManager.gameState == GameState.InPlay)
         {
-            width = GetComponent<SpriteRenderer>().bounds.size.x;
             // Find Nearby Objects to Player Object
             if (GameObject.FindWithTag("Player"))
             {
@@ -51,23 +51,31 @@ public abstract class InteractionTrriger : MonoBehaviorObj
             {
                 if (popupUI == null)
                 {
-                    popupUI = GameManager.Resource.Instantiate("UI/InteractionUI", GameManager.Instance.canvas.transform);
-                    popupUI.GetComponent<InteractHover>().text.text = PlayerDataManager.keySetting.InteractionKey + " - " + text;
+                    GetComponent<Trans2Canvas>().GenerateUI("UI/InteractionUI");
+                    popupUI = GetComponent<Trans2Canvas>().UIObj;
+
+
+//                    popupUI = GameManager.Resource.Instantiate("UI/InteractionUI", GameManager.Instance.canvas.transform);
+                    popupUI.GetComponent<InteractHover>().textorigin = PlayerDataManager.keySetting.InteractionKey + " - " + text;
 
                 }
                 PopUpMenu();
             }
             else
             {
-                GameManager.Resource.Destroy(popupUI);
-                popupUI = null;
+                if(popupUI != null)
+                {
+                    popupUI.GetComponent<InteractHover>().Close();
+                    popupUI = null;
+                }
             }
         }
         else
         {
-            if(popupUI != null) 
+            if(popupUI != null)
             {
                 GameManager.Resource.Destroy(popupUI.gameObject);
+                popupUI = null;
             }
         }
     }
@@ -83,6 +91,6 @@ public abstract class InteractionTrriger : MonoBehaviorObj
     // Set Interaction Hovering UI Position
     public void PopUpMenu()
     {
-        Func.SetRectTransform(popupUI, GameManager.cameraManager.camera.WorldToScreenPoint(transform.position) - new Vector3(Screen.width / 2, Screen.height / 2, 0) + new Vector3(width + 250, 50, 0));
+//        Func.SetRectTransform(popupUI, GameManager.cameraManager.camera.WorldToScreenPoint(GetComponent<Trans2Canvas>().UIIngameTransform.position));
     }
 }

@@ -13,7 +13,7 @@ public class Extinguish : Buff
 
         cooltime = 10f;
 
-        this.dmg = 10 + 2 * dmg * (100 + tar.GetComponent<Player>().status.extinguishDMG) / 100; ;
+        this.dmg = 10 + 2 * dmg * (100 + attacker.GetComponent<Player>().status.extinguishDMG) / 100; ;
         target.calcStatus();
         startEffect();
     }

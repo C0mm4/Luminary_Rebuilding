@@ -70,6 +70,7 @@ public class Inventory : Menu
 
         }
         catch { }
+        GameManager.inputManager.MenuCloseT = Time.time;
         hide();
     }
 

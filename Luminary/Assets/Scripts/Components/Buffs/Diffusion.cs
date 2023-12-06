@@ -12,7 +12,7 @@ public class Diffusion : Buff
 
         cooltime = 20f;
 
-        this.dmg = 1 * (100 + tar.GetComponent<Player>().status.diffusionDMG) / 100;
+        this.dmg = 1 * (100 + attacker.GetComponent<Player>().status.diffusionDMG) / 100;
 
         startEffect();
     }

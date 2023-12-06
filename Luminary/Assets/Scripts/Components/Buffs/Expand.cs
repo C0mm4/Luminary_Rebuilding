@@ -12,7 +12,7 @@ public class Expand : Buff
 
         cooltime = 10f;
 
-        this.dmg = 1 * (100 + tar.GetComponent<Player>().status.expandDMG) / 100; ;
+        this.dmg = 1 * (100 + attacker.GetComponent<Player>().status.expandDMG) / 100; ;
 
         startEffect();
     }

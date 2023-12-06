@@ -8,8 +8,13 @@ public class BossRoom : DunRoom
     public GameObject boss;
     public override IEnumerator MobSpawn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return 0;
         GameObject go = GameManager.mobSpawnner.bossSpawn(boss, spawnTrans[0]);
+    }
+
+    public override void OpenDoor()
+    {
+        base.OpenDoor();
     }
 }
 

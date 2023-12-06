@@ -562,7 +562,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4afd6630696db2a409f7b56938d687c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9719bdd760cdda46b9c97cef5aed227, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2122,6 +2122,7 @@ MonoBehaviour:
   menusize: 0
   currentMenu: 0
   closeButton: {fileID: 5044035415381396819}
+  confirmButton: {fileID: 2954612234103895318}
   originSlotindex: 0
   isEquip: 0
   itemImg: {fileID: 8232836928175472718}
@@ -2134,7 +2135,6 @@ MonoBehaviour:
   intelect: {fileID: 2514726736866859774}
   HP: {fileID: 2060076629549662357}
   MP: {fileID: 7570205698467117130}
-  confirmButton: {fileID: 2954612234103895318}
 --- !u!1 &7367620841391334950
 GameObject:
   m_ObjectHideFlags: 0

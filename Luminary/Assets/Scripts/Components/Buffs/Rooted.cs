@@ -12,7 +12,7 @@ public class Rooted : Buff
 
         cooltime = 10f;
 
-        this.dmg = 1 *(100 + tar.GetComponent<Player>().status.rootedDMG) / 100; ;
+        this.dmg = 1 *(100 + attacker.GetComponent<Player>().status.rootedDMG) / 100; ;
 
         startEffect();
         

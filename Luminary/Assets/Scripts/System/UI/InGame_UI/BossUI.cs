@@ -32,6 +32,14 @@ public class BossUI : MonoBehaviorObj
                 StartCoroutine(SetYellowBar(targetCurrentHP));
             }
         }
+        if(boss == null)
+        {
+            GameManager.Resource.Destroy(gameObject);
+        }
+        else if(boss.status.currentHP <= 0)
+        {
+            SetYellowBar(0);
+        }
     }
 
     public void SetData()
@@ -54,11 +62,13 @@ public class BossUI : MonoBehaviorObj
     public IEnumerator SetYellowBar(int targetYellowBar)
     {
         yellowbarRunning = true;
-        for(; yellowBar > targetYellowBar; yellowBar--)
+        for(; yellowBar > targetYellowBar; yellowBar -= 100)
         {
             HPBar.fillAmount = (float)((float)yellowBar / (float)boss.status.maxHP);
             yield return new WaitForSeconds(0.0001f);
         }
+        yellowBar = targetYellowBar;
+        HPBar.fillAmount = (float)((float)yellowBar / (float)boss.status.maxHP);
         yellowbarRunning = false;
     }
 

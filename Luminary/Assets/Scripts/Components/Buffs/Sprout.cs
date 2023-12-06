@@ -14,7 +14,7 @@ public class Sprout : Buff
 
         cooltime = 20f;
 
-        this.dmg = 1 * (100 + tar.GetComponent<Player>().status.sproutDMG) / 100; ;
+        this.dmg = 1 * (100 + attacker.GetComponent<Player>().status.sproutDMG) / 100; ;
         startEffect();
     }
     public override void startEffect()

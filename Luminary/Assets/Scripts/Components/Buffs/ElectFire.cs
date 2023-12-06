@@ -12,7 +12,7 @@ public class ElectFire : Buff
             
         cooltime = 10f;
 
-        this.dmg = target.isboss ? (target.status.maxHP / 10) * (100 + tar.GetComponent<Player>().status.electFireDMG) / 100 : 20 * (100 + tar.GetComponent<Player>().status.electFireDMG) / 100; ;
+        this.dmg = target.isboss ? (target.status.maxHP / 10) * (100 + attacker.GetComponent<Player>().status.electFireDMG) / 100 : 20 * (100 + attacker.GetComponent<Player>().status.electFireDMG) / 100; ;
 
         startEffect();
     }

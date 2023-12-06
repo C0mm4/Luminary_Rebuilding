@@ -214,8 +214,33 @@ public class MapGen
         // change connnect corridor tiles door tiles
         room.transform.position = new Vector3(room.x * 2.56f, room.y * 2.56f, 0);
         SetTilePos(room);
-        SetDoorTile(targetRoom.Key, room, pos, po);
-        SetPosData(room, po);
+        Tile tile1, tile2;
+        (tile1, tile2) = SetDoorTile(targetRoom.Key, room, pos, po);
+        GameObject go;
+        switch (tile1.types)
+        {
+            case 2:
+                go = GameManager.Resource.Instantiate("Dungeon/Door/BossDoor", room.transform);
+                go.transform.position = tile2.transform.position;
+                go.transform.position += new Vector3(0, -2.56f, -1f);
+                break;
+            case 4:
+                go = GameManager.Resource.Instantiate("Dungeon/Door/BossDoor", room.transform);
+                go.transform.position = tile2.transform.position;
+                go.transform.position += new Vector3(2.56f, 0f, -1f);
+                break;
+            case 6:
+                go = GameManager.Resource.Instantiate("Dungeon/Door/BossDoor", room.transform);
+                go.transform.position = tile2.transform.position;
+                go.transform.position += new Vector3(-2.56f, 0f, -1f);
+                break;
+            case 8:
+                go = GameManager.Resource.Instantiate("Dungeon/Door/BossDoor", room.transform);
+                go.transform.position = tile2.transform.position;
+                go.transform.position += new Vector3(0, 2.56f, -1f);
+                break;
+        }
+        //        SetPosData(room, po);
 
         targetRoom.Key.ConnectRoom.Add(room);
         room.ConnectRoom.Add(targetRoom.Key);
@@ -276,6 +301,7 @@ public class MapGen
         room.transform.position = new Vector3(room.x * 2.56f, room.y * 2.56f, 0);
         SetTilePos(room);
         SetDoorTile(targetRoom.Key, room, pos, po);
+
         SetPosData(room, po);
 
         targetRoom.Key.ConnectRoom.Add(room);
@@ -366,7 +392,7 @@ public class MapGen
         return room;
     }
     // Change Tile Door tiles
-    public void SetDoorTile(DunRoom sroom, DunRoom troom, Vector2 pos, PointPosition po)
+    public (Tile, Tile) SetDoorTile(DunRoom sroom, DunRoom troom, Vector2 pos, PointPosition po)
     {
         int type = new int();
         // Find Corridor direction
@@ -427,7 +453,7 @@ public class MapGen
         // Set Corridor Tiles
         SetCorridor(new Vector2(target.x, target.y), new Vector2(troomTile.x, troomTile.y), po, sroom, troom);
 
-
+        return (sroom.tiles[index], troomTile);
     }
 
     // set rooms tiles position 

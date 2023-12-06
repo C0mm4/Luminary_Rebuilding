@@ -34,7 +34,9 @@ public abstract class Menu : MonoBehaviorObj
     public virtual void exit()
     {
         hide();
+        GameManager.inputManager.MenuCloseT = Time.time;
         GameManager.Resource.Destroy(gameObject);
+        
     }
 
     // menu input Set Delayed 0.5f seconds

@@ -12,7 +12,7 @@ public class Execution : Buff
 
         cooltime = 5f;
 
-        this.dmg = (int)Mathf.Floor(0.1f * stackCnt * dmg) * (100 + tar.GetComponent<Player>().status.executionDMG) / 100;
+        this.dmg = (int)Mathf.Floor(0.1f * stackCnt * dmg) * (100 + attacker.GetComponent<Player>().status.executionDMG) / 100;
         Debug.Log(stackCnt);
         startEffect();
     }
