@@ -7,31 +7,25 @@ public class PlayerRollState : State
     // Start is called before the first frame update
 
     Vector2 dir = Vector2.one;
-    Vector2 pdir = new Vector2();
-
-    Vector2 spellDir = new Vector2();
     public PlayerRollState()
     {
 
     }
 
-    public PlayerRollState(Vector2 dir)
+    public PlayerRollState(Vector2 dir, GameObject obj)
     {
-        spellDir = dir;
+        this.dir = dir;
     }
 
     public override void EnterState(Charactor chr)
     {
         charactor = chr;
 
+        
+        charactor.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        charactor.AnimationPlay("TeleportAnimation", 1f);
 
-        Debug.Log(spellDir.x);
-        dir = dir * spellDir;
-        dir = dir.normalized;
-        pdir = spellDir;
-        pdir = pdir.normalized * pdir;
-        charactor.GetComponent<Rigidbody2D>().velocity = spellDir + dir * 5;
-
+        charactor.GetComponent<Player>().telpoDir = dir;
     }
     
     public override void UpdateState()
@@ -45,7 +39,6 @@ public class PlayerRollState : State
 
     public override void ExitState()
     {
-        charactor.GetComponent<Rigidbody2D>().velocity = charactor.GetComponent<Player>().charactorSpeed;
         charactor = null;
         
     }

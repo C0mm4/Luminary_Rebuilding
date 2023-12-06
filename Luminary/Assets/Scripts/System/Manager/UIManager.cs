@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
 
 
     Queue<string> textUIqueue = new Queue<string>();
+    GameObject currentTextUI;
     private float textUItime = -3f;
 
     public Menu currentMenu = null;
@@ -130,8 +131,8 @@ public class UIManager : MonoBehaviour
 
     private void GenTextUI()
     {
-        var obj = GameManager.Resource.Instantiate("UI/TextUI");
-        obj.GetComponent<TextUI>().text = textUIqueue.Dequeue();
+        currentTextUI = GameManager.Resource.Instantiate("UI/TextUI");
+        currentTextUI.GetComponent<TextUI>().text = textUIqueue.Dequeue();
     }
 
     public void InPlayInput()
@@ -177,11 +178,11 @@ public class UIManager : MonoBehaviour
             // Draw TEXT UI
             if (textUIqueue.Count > 0)
             {
-                if (Time.time - textUItime > 2.5f)
-                {
-                    textUItime = Time.time;
-                    GenTextUI();
-                }
+                if(currentTextUI != null)
+                    GameManager.Resource.Destroy(currentTextUI);
+
+                GenTextUI();
+                
             }
 
             if (invUI == null)

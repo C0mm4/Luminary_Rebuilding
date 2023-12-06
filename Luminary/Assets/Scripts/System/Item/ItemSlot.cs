@@ -111,7 +111,6 @@ public class ItemSlot : MonoBehaviorObj, IDragHandler, IEndDragHandler, IPointer
 
     public virtual void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Click Detected by index : " + index);
         if(item != null)
         {
             if (eventData.button == PointerEventData.InputButton.Right)

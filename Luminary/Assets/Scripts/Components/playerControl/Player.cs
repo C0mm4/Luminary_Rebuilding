@@ -21,6 +21,10 @@ public class Player : Charactor
     [SerializeField]
     public Transform staffPos;
 
+    public GameObject teleportObj;
+
+    public Vector3 telpoDir;
+
     public override void Awake()
     {
         base.Awake();
@@ -52,6 +56,18 @@ public class Player : Charactor
         skillslots[0] = new SkillSlot();
         skillslots[1] = new SkillSlot();
         skillslots[2] = new SkillSlot();
+
+        skillslots[0].setCommand(GameManager.Spells.spells[10003403]);
+        if (status.weapons[0].item != null)
+        {
+            skillslots[1].setCommand(GameManager.Spells.spells[status.weapons[0].item.data.spellnum]);
+
+        }
+        if (status.weapons[1].item != null)
+        {
+            skillslots[2].setCommand(GameManager.Spells.spells[status.weapons[1].item.data.spellnum]);
+
+        }
     }
 
     
@@ -123,15 +139,6 @@ public class Player : Charactor
     {
         if (GameManager.uiState == UIState.InPlay || GameManager.uiState == UIState.Lobby)
         {
-            // Teleport some Distance
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (skillslots[0].isSet())
-                {
-                    if (ismove)
-                        StartCoroutine("roll");
-                }
-            }
             // charactor move vector set with WASD
             if (getState().GetType().Name == "PlayerIdleState" || getState().GetType().Name == "PlayerMoveState")
             {
@@ -155,6 +162,21 @@ public class Player : Charactor
                     charactorSpeed.x = status.speed;
                 }
 
+            }
+
+
+            // Teleport some Distance
+            if (Input.GetKeyDown(KeyCode.Space) && charactorSpeed != Vector2.zero)
+            {
+                if (skillslots[0].isSet())
+                {
+/*                    if (status.currentMana >= 2)
+                    {
+                        teleportObj = new GameObject();
+                        teleportObj.transform.position = transform.position + new Vector3(charactorSpeed.x, charactorSpeed.y) * 0.1f;
+                        changeState(new PlayerRollState(charactorSpeed, teleportObj));
+                    }*/
+                }
             }
         }
     }
@@ -201,25 +223,6 @@ public class Player : Charactor
     }
 
 
-    public IEnumerator roll()
-    {
-        if(GameManager.uiState == UIState.InPlay || GameManager.uiState == UIState.Lobby)
-        {
-            if (GameManager.FSM.getList(sMachine.getStateStr()).Contains("PlayerCastingState"))
-            {
-                if (skillslots[0].isSet())
-                {
-                    Debug.Log(charactorSpeed);
-                    changeState(new PlayerCastingState(skillslots[0].getSpell(), charactorSpeed));
-                    skillslots[0].useSkill();
-                }
-
-                yield return new WaitForSeconds(0);
-            }
-
-        }
-
-    }
     // Item Equip in inventory[index] to equip[targetslotIndex]
     public void ItemEquip(int index, Item item, int targetslotindex = -1)
     {
@@ -456,5 +459,17 @@ public class Player : Charactor
         status.weapons[tindex].item= tmp;
 
         GameManager.Instance.uiManager.invenFresh();
+    }
+
+    public void Teleport()
+    {
+        GetComponent<Rigidbody2D>().velocity = telpoDir;
+        isHit = true;
+    }
+    public void TeleportEnd()
+    {
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        telpoDir = Vector2.zero;
+        isHit = false;
     }
 }

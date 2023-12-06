@@ -611,7 +611,7 @@
                 <elements>0</elements>
 		<path>Spell/None/SpellTeleport</path>
 		<spr>Spells/Icon/SpellTeleport</spr>
-                <type>field</type>
+                <type>Projectile</type>
 	</spell>
 	<spell>
 		<Index>10003501</Index>

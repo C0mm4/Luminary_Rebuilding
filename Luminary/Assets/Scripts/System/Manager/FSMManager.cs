@@ -7,7 +7,7 @@ using UnityEngine.Windows;
 public class FSMManager
 {
     public Dictionary<string, List<string>> fsm;
-    
+
     public void init()
     {
         fsm = new Dictionary<string, List<string>>();
@@ -15,7 +15,7 @@ public class FSMManager
         {
             "PlayerIdleState",
             "PlayerMoveState",
-            "PlayerTeleportState",
+            "PlayerRollState",
             "PlayerCastingState",
             "DieState",
             "PlayerHitState",
@@ -37,7 +37,10 @@ public class FSMManager
         fsm[playerstate[1]] = playerfsm;
 
         // Roll State FSM
-        playerfsm = new List<string>();
+        playerfsm = new List<string>()
+        {
+            playerstate[4], playerstate[7],
+        };
         fsm[playerstate[2]] = playerfsm;
 
         // Casting State FSM

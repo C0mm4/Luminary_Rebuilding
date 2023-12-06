@@ -150,6 +150,7 @@ MonoBehaviour:
   isInit: 0
   ismove: 0
   staffPos: {fileID: 2967313876235888078}
+  teleportObj: {fileID: 0}
 --- !u!70 &3815053299480733043
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

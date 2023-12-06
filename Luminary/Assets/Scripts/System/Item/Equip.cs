@@ -11,7 +11,15 @@ public class Equip : ItemSlot
 
     public override void OnPointerClick(PointerEventData eventData)
     {
+        if (item != null)
+        {
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                GameManager.player.GetComponent<Player>().Unequip(index, item);
+                GameManager.Instance.uiManager.invenFresh();
+            }
 
+        }
     }
 
     public override void OnEndDrag(PointerEventData eventData)
@@ -26,8 +34,6 @@ public class Equip : ItemSlot
                 {
                     if (equip != null && equip != this)
                     {
-                        Debug.Log(equip.index);
-                        GameManager.player.GetComponent<Player>().EquipSwap(index, equip.index);
                     }
                 }
                 else

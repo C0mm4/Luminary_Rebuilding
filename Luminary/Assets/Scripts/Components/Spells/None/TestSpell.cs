@@ -20,7 +20,7 @@ public class TestSpell : SpellObj
         State getspell = player.GetComponent<Charactor>().getState();
         if (getspell.GetType().Name == "PlayerMoveState")
         {
-            player.GetComponent<Charactor>().changeState(new PlayerRollState(mos));
+//            player.GetComponent<Charactor>().changeState(new PlayerRollState(mos));
             // After 0.3f seconds rollback Player Speed
             Invoke("endrun", 0.2f);
         }

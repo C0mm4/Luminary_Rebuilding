@@ -16,6 +16,6 @@ public class tmpObj : MonoBehaviour
 
         transform.position = new Vector3(
             GameManager.inputManager.mouseWorldPos.x, 
-            GameManager.inputManager.mouseWorldPos.y, -5);
+            GameManager.inputManager.mouseWorldPos.y, -15);
     }
 }
