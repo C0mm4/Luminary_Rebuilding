@@ -93,4 +93,9 @@ public abstract class InteractionTrriger : MonoBehaviorObj
     {
 //        Func.SetRectTransform(popupUI, GameManager.cameraManager.camera.WorldToScreenPoint(GetComponent<Trans2Canvas>().UIIngameTransform.position));
     }
+
+    public void SetText(string txt)
+    {
+        popupUI.GetComponent<InteractHover>().textorigin = txt;
+    }
 }

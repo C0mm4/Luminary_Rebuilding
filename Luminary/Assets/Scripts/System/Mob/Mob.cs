@@ -95,6 +95,17 @@ public class Mob : Charactor
         }
     }
 
+    public void OnDestroy()
+    {
+        int i = GameManager.Random.getGeneralNext(0, 100);
+        Debug.Log(i);
+        if(i < 10)
+        {
+            GameObject go = GameManager.Resource.Instantiate("Obj/Heart");
+            go.transform.position = transform.position;
+        }
+    }
+
     public override void DieObject()
     {
         // Current Room's mob count decrease
