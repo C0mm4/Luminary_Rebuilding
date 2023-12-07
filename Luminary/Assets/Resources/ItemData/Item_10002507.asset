@@ -20,9 +20,9 @@ MonoBehaviour:
   itemIndex: 10002507
   spellnum: 10003701
   funcName: StatusEquip
-  baseDex: 1
-  baseInt: 1
-  baseStr: 1
+  baseDex: 0
+  baseInt: 0
+  baseStr: 0
   baseIncDMG: 0
   basepIncDMG: 0
   baseIncHP: 0

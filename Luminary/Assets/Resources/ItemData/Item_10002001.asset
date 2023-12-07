@@ -58,4 +58,4 @@ MonoBehaviour:
   flavorText: 
   purchaseGold: 1200
   sellGold: 600
-  increaseStatus: {fileID: 0}
+  increaseStatus: {fileID: 11400000, guid: 1cf51c2590485bc49902409e6f2ac69e, type: 2}

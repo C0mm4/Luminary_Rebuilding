@@ -54,8 +54,8 @@ MonoBehaviour:
   overloadDMG: 0
   executionDMG: 0
   basepGetDMG: 0
-  effectText: Dex + 1 Str + 1
+  effectText: Dex + 2 Str + 1
   flavorText: 
   purchaseGold: 1800
   sellGold: 900
-  increaseStatus: {fileID: 11400000, guid: 8e4cb8ea36a8e114b8bc1f75177df84f, type: 2}
+  increaseStatus: {fileID: 11400000, guid: a7151290dd9c1dd4dbf4ef54c1626f76, type: 2}

@@ -42,7 +42,7 @@ MonoBehaviour:
   fireDMG: 0
   electFireDMG: 0
   burnningDMG: 0
-  crackedDMG: 30
+  crackedDMG: 0
   rootedDMG: 0
   electShockDMG: 0
   expandDMG: 0
@@ -58,4 +58,4 @@ MonoBehaviour:
   flavorText: 
   purchaseGold: 1800
   sellGold: 900
-  increaseStatus: {fileID: 11400000, guid: 8e4cb8ea36a8e114b8bc1f75177df84f, type: 2}
+  increaseStatus: {fileID: 11400000, guid: 1cf51c2590485bc49902409e6f2ac69e, type: 2}

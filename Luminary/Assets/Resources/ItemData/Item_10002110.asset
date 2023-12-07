@@ -39,7 +39,7 @@ MonoBehaviour:
   seedDMG: 0
   meltingDMG: 0
   extinguishDMG: 0
-  fireDMG: 30
+  fireDMG: 0
   electFireDMG: 0
   burnningDMG: 0
   crackedDMG: 0
@@ -58,4 +58,4 @@ MonoBehaviour:
   flavorText: 
   purchaseGold: 1800
   sellGold: 900
-  increaseStatus: {fileID: 11400000, guid: 8e4cb8ea36a8e114b8bc1f75177df84f, type: 2}
+  increaseStatus: {fileID: 11400000, guid: a7151290dd9c1dd4dbf4ef54c1626f76, type: 2}

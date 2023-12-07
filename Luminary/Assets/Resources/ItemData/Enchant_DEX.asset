@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseGold: 1500
   increaseGold: 1000
-  dex: 0
-  strength: 1
+  dex: 1
+  strength: 0
   intellect: 0
   increaseDMG: 0
   pincreaseDMG: 0
