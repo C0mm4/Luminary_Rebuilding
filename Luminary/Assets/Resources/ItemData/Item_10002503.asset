@@ -21,7 +21,7 @@ MonoBehaviour:
   spellnum: 10003200
   funcName: StatusEquip
   baseDex: 0
-  baseInt: 0
+  baseInt: 1
   baseStr: 0
   baseIncDMG: 0
   basepIncDMG: 0
