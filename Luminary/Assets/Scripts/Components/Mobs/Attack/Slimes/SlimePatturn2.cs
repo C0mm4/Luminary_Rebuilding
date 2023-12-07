@@ -35,7 +35,7 @@ public class SlimePatturn2 : Patturn
         jellys = new List<GameObject>();
         shadows = new List<GameObject>();
         pos = new List<Transform>();
-        for(int i = 0; i < 2; i++)
+        for(int i = 0; i < 7; i++)
         {
             for(int j = 0; j < 7; j++)
             {

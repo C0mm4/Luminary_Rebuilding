@@ -49,7 +49,7 @@ public class EnchantTable : Menu
         }
         else
         {
-            confirmButton.GetComponent<ConfirmButton>().isAble = true;
+            confirmButton.GetComponent<ConfirmButton>().isAble = false;
         }
     }
 

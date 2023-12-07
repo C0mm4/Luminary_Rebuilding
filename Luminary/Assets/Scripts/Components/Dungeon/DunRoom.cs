@@ -57,7 +57,7 @@ public class DunRoom : MonoBehaviour
     // When Start Room, Mob Spawns 1 seconds, and activate 1 seconds
     public virtual IEnumerator MobSpawn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         List<GameObject> gos = new List<GameObject>();
         // Spawn Mobs
         foreach (Transform trans in spawnTrans)
@@ -65,6 +65,7 @@ public class DunRoom : MonoBehaviour
             GameObject go = GameManager.mobSpawnner.spawnMob(GameManager.Random.getGeneralNext(0, GameManager.mobSpawnner.mobLists.Count), trans);
             mobCount++;
             gos.Add(go);
+            go.GetComponent<Rigidbody2D>().simulated = false;
         }
         //
         yield return new WaitForSeconds(1f);
@@ -72,6 +73,7 @@ public class DunRoom : MonoBehaviour
         foreach(GameObject go in gos)
         {
             go.GetComponent<Mob>().spawnActive = true;
+            go.GetComponent<Rigidbody2D>().simulated = true;
         }
         //
         yield return 0;
