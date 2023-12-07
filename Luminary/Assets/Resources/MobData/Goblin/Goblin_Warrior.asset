@@ -26,4 +26,4 @@ MonoBehaviour:
   castCool:
   - 0
   AI: Warrior
-  dropGold: 2000
+  dropGold: 800

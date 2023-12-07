@@ -16,9 +16,9 @@ MonoBehaviour:
   baseHP: 85
   baseDMG: 1
   basespeed: 6
-  runRange: 5
-  runDistance: 10
-  detectDistance: 15
+  runRange: 4
+  runDistance: 6
+  detectDistance: 12
   attackRange:
   - 13
   castSpeed:
@@ -26,4 +26,4 @@ MonoBehaviour:
   castCool:
   - 0.2
   AI: Archor
-  dropGold: 1100
+  dropGold: 550

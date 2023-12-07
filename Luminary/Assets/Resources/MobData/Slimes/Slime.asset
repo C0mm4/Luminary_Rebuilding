@@ -26,4 +26,4 @@ MonoBehaviour:
   castCool:
   - 0
   AI: Slime
-  dropGold: 1000
+  dropGold: 600
