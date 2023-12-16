@@ -244,6 +244,13 @@ public class ResourceManager
         if (spr == null)
         {
             Debug.Log($"Failed to load Sprite : {path}");
+            spr = Load<Sprite>($"Sprites/default");
+            if(spr == null)
+            {
+                Debug.Log($"Failed to load Sprite : default");
+            }
+            Debug.Log(spr.name);
+            return spr;
         }
 
         return spr;

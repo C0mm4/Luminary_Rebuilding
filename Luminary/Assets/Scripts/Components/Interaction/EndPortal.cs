@@ -7,7 +7,7 @@ public class EndPortal : InteractionTrriger
     // Set Interect Distance, and Overlay Text
     public void Start()
     {
-        interactDist = 5f;
+        interactDist = 3f;
         text = "이동한다";
     }
 

@@ -61,7 +61,7 @@ public class Boss : Mob
         base.DieObject();
     }
 
-    public void OnDestroy()
+    public override void OnDestroy()
     {
         GameManager.Resource.Destroy(GameObject.Find("BossUI (Clone)"));
     }

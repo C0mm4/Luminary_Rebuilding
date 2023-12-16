@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -10,7 +11,7 @@ public class InputManager : MonoBehaviour
     private bool hasInput = false;
     public bool isDragging = false;
     public float MenuCloseT;
-
+    private string screenshotFolder = "Screenshots";
     // Key Input Event Check
     public void OnUpdate()
     {
@@ -47,8 +48,34 @@ public class InputManager : MonoBehaviour
 
             }
         }
+        if (Input.GetKeyDown(KeyCode.F12))
+        {
+            // 스크린샷 찍기
+            CaptureScreenshot();
+        }
     }
+    void CaptureScreenshot()
+    {
+        // Screenshot 폴더 경로 생성
+        string folderPath = Path.Combine(Application.dataPath, screenshotFolder);
 
+        // Screenshot 폴더가 없으면 생성
+        if (!Directory.Exists(folderPath))
+        {
+            Directory.CreateDirectory(folderPath);
+        }
+
+        // 현재 날짜와 시간을 이용하여 파일명 생성
+        string screenshotName = "Screenshot_" + System.DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png";
+
+        // 스크린샷 찍기
+        string filePath = Path.Combine(folderPath, screenshotName);
+        ScreenCapture.CaptureScreenshot(filePath);
+
+        // 콘솔에 메시지 출력
+        Debug.Log("Screenshot captured: " + screenshotName);
+        Debug.Log("Saved to: " + filePath);
+    }
     // Change Input Events by InGame UI States
     public void changeInputState()
     {

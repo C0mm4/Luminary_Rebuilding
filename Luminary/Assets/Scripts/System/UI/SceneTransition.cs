@@ -90,6 +90,8 @@ public class SceneTransition : MonoBehaviorObj
             fadeImage.color = color;
             yield return null;
         }
-        Destroy(fadeImage.gameObject);
+        if(fadeImage.gameObject != null)
+            Destroy(fadeImage.gameObject);
+        GameManager.gameState = GameState.InPlay;
     }
 }

@@ -182,6 +182,11 @@ public class ItemDataManager : MonoBehaviour
         int index = 10002500;
         Item item = ItemGen(index + GameManager.Random.getShopNext(1, staffcN + 1));
         Item item2 = ItemGen(index + GameManager.Random.getShopNext(1, staffcN + 1));
+        // return defferent weapons
+        while(item2.data.itemIndex == item.data.itemIndex)
+        {
+            item2 = ItemGen(index + GameManager.Random.getShopNext(1, staffcN + 1));
+        }
         return (item, item2);
     }
 }

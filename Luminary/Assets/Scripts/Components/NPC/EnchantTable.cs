@@ -22,6 +22,7 @@ public class EnchantTable : Menu
     public TMP_Text HP;
     public TMP_Text MP;
 
+    public int requireGolds;
 
     public override void Start()
     {
@@ -35,7 +36,8 @@ public class EnchantTable : Menu
         itemImg.sprite = targetItem.data.itemImage;
         itemName.text = targetItem.data.itemName;
         level.text = targetItem.data.level.ToString() + " - > " + (targetItem.data.level + 1).ToString();
-        reqGold.text = (targetItem.data.increaseStatus.baseGold + targetItem.data.level * targetItem.data.increaseStatus.increaseGold).ToString() + " G";
+        requireGolds = targetItem.data.increaseStatus.baseGold + targetItem.data.level * targetItem.data.increaseStatus.increaseGold;
+        reqGold.text = requireGolds.ToString() + " G";
         curGold.text = (GameManager.player.GetComponent<Player>().status.gold).ToString() + " G";
         str.text = (targetItem.data.status.strength).ToString() + " - > " + (targetItem.data.status.strength + targetItem.data.increaseStatus.strength).ToString();
         dex.text = (targetItem.data.status.dex).ToString() + " - > " + (targetItem.data.status.dex + targetItem.data.increaseStatus.dex).ToString();
@@ -73,8 +75,7 @@ public class EnchantTable : Menu
 
     public void LevelUp()
     {
-        int targetGold = targetItem.data.increaseStatus.baseGold + targetItem.data.level * targetItem.data.increaseStatus.increaseGold;
-        if(GameManager.player.GetComponent<Player>().status.gold >= targetGold)
+        if(GameManager.player.GetComponent<Player>().status.gold >= requireGolds)
         {
             if (isEquip)
             {
@@ -98,7 +99,7 @@ public class EnchantTable : Menu
 
             Debug.Log(GameManager.player.GetComponent<Player>().status.strength);
             GameManager.player.GetComponent<Player>().calcStatus();
-            GameManager.player.GetComponent<Player>().status.gold -= targetItem.data.increaseStatus.baseGold + targetItem.data.level * targetItem.data.increaseStatus.increaseGold;
+            GameManager.player.GetComponent<Player>().status.gold -= requireGolds;
             Debug.Log(GameManager.player.GetComponent<Player>().status.strength);
 
         }

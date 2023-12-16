@@ -376,6 +376,7 @@ public class Player : Charactor
                 Debug.Log("Inventory is Full");
             }
 
+            GameManager.Instance.uiManager.stableUI.GetComponent<StableUI>().weaponSlot[n].GetComponent<WeaponSlotUI>().deSetWeapon(n);
         }
         else
         {
@@ -395,8 +396,9 @@ public class Player : Charactor
                     status.weapons[n].AddItem(tmp);
                     spells[n + 1].deSetCommand();
                 }
-                
+
             }
+            GameManager.Instance.uiManager.stableUI.GetComponent<StableUI>().weaponSlot[n].GetComponent<WeaponSlotUI>().deSetWeapon(n);
         }
         
         calcStatus();

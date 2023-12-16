@@ -95,7 +95,7 @@ public class Mob : Charactor
         }
     }
 
-    public void OnDestroy()
+    public virtual void OnDestroy()
     {
         int i = GameManager.Random.getGeneralNext(0, 100);
         Debug.Log(i);

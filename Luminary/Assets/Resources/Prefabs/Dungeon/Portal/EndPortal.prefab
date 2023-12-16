@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  interactDist: 0
+  interactDist: 3
   UIPosition: {fileID: 0}
   popupUI: {fileID: 0}
   text: 
@@ -140,7 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d774777745f0f9c459c15179f5f59624, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4113017944fcd4b4cba20c0ab667187e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

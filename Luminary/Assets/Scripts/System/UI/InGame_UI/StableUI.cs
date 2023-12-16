@@ -108,23 +108,7 @@ public class StableUI : MonoBehaviorObj
         this.castStartT = startT;
     }
 
-    // Change showing weapon slot
-    public void WeaponSlotChange(int n)
-    {
-        int disabletarget;
-        if(n == 0)
-        {
-            disabletarget = 1;
 
-        }
-        else
-        {
-            disabletarget = 0;
-        }
-
-        weaponSlot[disabletarget].GetComponent<WeaponSlotUI>().disable();
-        weaponSlot[n].GetComponent<WeaponSlotUI>().enable();
-    }
 
     public void FreshMaxHPMP()
     {
