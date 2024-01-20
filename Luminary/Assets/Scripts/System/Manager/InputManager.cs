@@ -8,10 +8,9 @@ public class InputManager : MonoBehaviour
 {
     public Action KeyAction = null;
     public Vector3 mousePos = new Vector3(), mouseWorldPos = new Vector3();
-    private bool hasInput = false;
-    public bool isDragging = false;
     public float MenuCloseT;
     private string screenshotFolder = "Screenshots";
+    public bool isDragging;
     // Key Input Event Check
     public void OnUpdate()
     {

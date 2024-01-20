@@ -35,7 +35,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public static UIState uiState = UIState.Title;
 
-    public Action SceneChangeAction;
+    public Action sceneChangeAction;
+    public Action SceneChangeAction {  get { return sceneChangeAction; } set { sceneChangeAction += value; } }
 
     ResourceManager _resource = new ResourceManager();
     public static ResourceManager Resource { get { return gm_Instance._resource; } }

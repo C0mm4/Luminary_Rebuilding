@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ItemSlot : MonoBehaviorObj, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -45,7 +46,7 @@ public class ItemSlot : MonoBehaviorObj, IDragHandler, IEndDragHandler, IPointer
         {
             if (!GameManager.inputManager.isDragging)
             {
-
+                // Make the dragged item image slightly transparent to indicate the selected item while dragging
                 GameManager.Instance.uiManager.invUI.GetComponent<Inventory>().clickIndex = index;
                 GameManager.Instance.uiManager.invUI.GetComponent<Inventory>().tmpitem = GameManager.Resource.Instantiate("UI/TmpItem");
                 GameObject tmpobj = GameManager.Instance.uiManager.invUI.GetComponent<Inventory>().tmpitem;
@@ -62,7 +63,7 @@ public class ItemSlot : MonoBehaviorObj, IDragHandler, IEndDragHandler, IPointer
 
     public virtual void OnEndDrag(PointerEventData eventData)
     {
-        // 드래그를 끝낼 때 호출되는 함수
+        // Complete the dragging operation: If there is a dragged item upon drag release, proceed with equipping or unequipping that item accordingly 
         if (GameManager.Instance.uiManager.invUI.GetComponent<Inventory>().clickIndex != -1)
         {
             if (eventData.pointerEnter != null)
@@ -113,6 +114,7 @@ public class ItemSlot : MonoBehaviorObj, IDragHandler, IEndDragHandler, IPointer
     {
         if(item != null)
         {
+            // Equip the item on right-click
             if (eventData.button == PointerEventData.InputButton.Right)
             {
                 GameManager.player.GetComponent<Player>().Equip(index, item);
@@ -127,6 +129,7 @@ public class ItemSlot : MonoBehaviorObj, IDragHandler, IEndDragHandler, IPointer
     {
         if(item != null)
         {
+            // Generate the UI displaying item information upon mouse hover
             GameManager.Instance.uiManager.invUI.GetComponent<Inventory>().hoveringUI = GameManager.Resource.Instantiate("UI/ItemHoveringUI");
             GameManager.Instance.uiManager.invUI.GetComponent<Inventory>().hoveringUI.GetComponent<ItemHoveringUI>().setData(item);
             GameManager.Instance.uiManager.invUI.GetComponent<Inventory>().hoveringUI.GetComponent<RectTransform>().localPosition = GameManager.cameraManager.camera.WorldToScreenPoint(GameManager.inputManager.mouseWorldPos) - new Vector3(Screen.width / 2, Screen.height / 2, 0) + new Vector3(260, 0, 0);

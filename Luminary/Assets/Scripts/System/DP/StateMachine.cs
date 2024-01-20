@@ -91,16 +91,6 @@ public class StateMachine
             currentState.ReSetState(target);
         }
     }
-    // return current state name to string
-    public string getStateStr()
-    {
-        return currentState.GetType().Name;
-    }
-    // return current state
-    public State getState()
-    {
-        return currentState;
-    }
 
     // set current state on idle and state stack empty
     public void setIdle()
@@ -124,5 +114,15 @@ public class StateMachine
                 currentState.EnterState(target);
             }
         }
+    }
+    // return current state name to string
+    public string getStateStr()
+    {
+        return currentState.GetType().Name;
+    }
+    // return current state
+    public State getState()
+    {
+        return currentState;
     }
 }

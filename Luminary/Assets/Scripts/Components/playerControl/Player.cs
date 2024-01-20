@@ -10,8 +10,6 @@ public class Player : Charactor
 
     public SkillSlot[] skillslots;
     public List<SkillSlot> spells;
-    public SkillSlot currentSpell;
-    public int currentSpellIndex;
 
     [SerializeField]
     InteractionTrriger interactionTrriger;
@@ -47,8 +45,6 @@ public class Player : Charactor
 
         sMachine.changeState(new PlayerIdleState());
         isInit = true;
-        currentSpell = skillslots[1];
-        currentSpellIndex = 0;
 
     }
     private void setSkillSlots()
@@ -185,7 +181,7 @@ public class Player : Charactor
     {
         if(GameManager.uiState == UIState.InPlay || GameManager.uiState == UIState.Lobby)
         {
-            // Mouse left click casting spells
+            // Mouse left, right click casting spells
             if (Input.GetMouseButtonDown(0))
             {
                 if (skillslots[1].isSet())

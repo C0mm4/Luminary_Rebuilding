@@ -55,7 +55,6 @@ public class ItemDataManager : MonoBehaviour
                     case 100028:
                         staffeN++;
                         break;
-
                 }
             }
         }

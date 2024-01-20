@@ -39,6 +39,7 @@ public class SkillSlot
             Vector3 pos = GameManager.inputManager.mouseWorldPos;
             GameManager.player.GetComponent<Charactor>().changeState(new PlayerCastingState(getSpell(), GameManager.inputManager.mouseWorldPos));
 
+
         }
         else
         {

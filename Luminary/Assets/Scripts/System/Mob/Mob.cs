@@ -73,7 +73,6 @@ public class Mob : Charactor
     {
         if (spawnActive)
         {
-
             // if Player didn't find, research player object
             if (player == null)
             {
@@ -89,7 +88,6 @@ public class Mob : Charactor
 
             // AI model update
             model.Update();
-
 
             base.Update();
         }

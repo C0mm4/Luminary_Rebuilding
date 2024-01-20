@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatusEquip : ItemFunc
+public class TestOnHitItem : ItemFunc
 {
 
     public override void EquipEffect()
@@ -10,6 +10,7 @@ public class StatusEquip : ItemFunc
         Debug.Log("TEST");
         GameManager.player.GetComponent<Player>().ItemStatusSum(data.status);
         Debug.Log(data.status.strength);
+        GameManager.player.GetComponent<Player>().attackEffect += OnHitEffect;
     }
 
     public override void OnDamagedEffect()
@@ -22,6 +23,7 @@ public class StatusEquip : ItemFunc
 
     public override void OnHitEffect(GameObject spellObj)
     {
+
     }
 
     public override void UnEquipEffect()

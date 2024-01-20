@@ -30,7 +30,6 @@ public class SpellManager
     {
         foreach (XmlNode node in text)
         {
-
             Spell spl = new Spell();
             spl.setData(setSpellData(node));
             spells.Add(int.Parse(node["Index"].InnerText), spl);

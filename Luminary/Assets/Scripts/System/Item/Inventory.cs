@@ -119,18 +119,22 @@ public class Inventory : Menu
             if (equipWeapons[0].item != null)
             {
                 spellSlot1.sprite = GameManager.Spells.getSpellData(equipWeapons[0].item.data.spellnum).spr;
+                spellSlot1.color = new Color(1, 1, 1, 1);
             }
             else
             {
                 spellSlot1.sprite = null;
+                spellSlot1.color = new Color(0, 0, 0, 0);
             }
             if (equipWeapons[1].item != null)
             {
                 spellSlot2.sprite = GameManager.Spells.getSpellData(equipWeapons[1].item.data.spellnum).spr;
+                spellSlot2.color = new Color(1, 1, 1, 1);
             }
             else
             {
                 spellSlot2.sprite = null;
+                spellSlot2.color = new Color(0, 0, 0, 0);
             }
         }
     }

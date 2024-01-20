@@ -13,8 +13,6 @@ using UnityEngine.SearchService;
 public class ResourceManager
 {
 
-    public int a = 1;
-    public int geta() { return a; }
     // path에 있느 파일을 로드하는 함수, 로드되는 조건은 Object 일 때
     public T Load<T>(string path) where T : Object
     {
@@ -220,21 +218,6 @@ public class ResourceManager
         }
     }
 
-    // Loading XML Datas in path
-    public XmlDocument LoadXML(string path)
-    {
-        XmlDocument xml = new XmlDocument();
-        TextAsset txtAsset = Load<TextAsset>($"XML/{path}");
-        xml.LoadXml(txtAsset.text);
-
-        if (xml == null)
-        {
-            Debug.Log($"Failed to load XML : {path}");
-            return null;
-        }
-
-        return xml;
-    }
 
     // Loading Sprites in path
     public Sprite LoadSprite(string path)

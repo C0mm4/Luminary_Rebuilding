@@ -13,7 +13,7 @@ public abstract class ItemFunc
     // Item Effect on game Frame
     public abstract void OnFrameEffect();
     // Item Effect when Hit enemy
-    public abstract void OnHitEffect();
+    public abstract void OnHitEffect(GameObject spellObj);
     // Item Effect when Damaged
     public abstract void OnDamagedEffect();
     
