@@ -37,8 +37,8 @@ public class Charactor : MonoBehaviorObj
     public int currentweaponSize = 0;
 
     // Attack Hit Handler
-    public Event attackEffect = null;
-    public Event hitEffect = null;
+    public Action<GameObject> attackEffect = null;
+    public Action hitEffect = null;
 
     [SerializeField]
     public bool godmode;

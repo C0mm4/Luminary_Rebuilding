@@ -11,7 +11,7 @@ public class Spell
     {
         GameObject obj = GameManager.Resource.Instantiate(data.path);
         obj.GetComponent<SpellObj>().setData(data, mos);
-
+        GameManager.player.GetComponent<Player>().attackEffect(obj);
     }
 
     public void setData(SpellData dt)
